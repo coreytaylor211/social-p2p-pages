@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>social-p2p — dezentrale P2P-Social-App (Beta)</title>
+  <meta name="description" content="social-p2p ist eine dezentrale, backend-lose Social-App. Inhalte werden Ende-zu-Ende-verschlüsselt zwischen Geräten verteilt – nur solange die App offen ist. Closed Beta.">
+  <meta name="robots" content="noindex">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="social-p2p — dezentrale P2P-Social-App (Beta)">
+  <meta property="og:description" content="Dezentrale, backend-lose Social-App. Inhalte E2E-verschlüsselt, P2P verteilt, nur solange die App offen ist. Closed Beta, pseudonym ≠ anonym.">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="./">social<span>-p2p</span></a>
+      <nav class="site" aria-label="Hauptnavigation">
+        <ul>
+          <li><a href="privacy/">Datenschutz</a></li>
+          <li><a href="terms/">Nutzungsbedingungen</a></li>
+          <li><a href="support/">Support</a></li>
+          <li><a href="account-deletion/">Konto löschen</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <span class="badge">Closed Beta · Vorabversion</span>
+      <h1>Eine dezentrale, backend-lose Social-App</h1>
+      <p class="lead">
+        social-p2p verteilt Beiträge direkt zwischen den Geräten der Teilnehmer –
+        ohne zentralen Inhalts-Server. Deine Identität ist ein Schlüsselpaar, das
+        ausschließlich auf deinem Gerät liegt.
+      </p>
+    </section>
+
+    <div class="note">
+      <strong>Ehrlicher Hinweis:</strong> Dies ist eine <strong>geschlossene Beta</strong>
+      (Vorabversion). Funktionen können sich ändern, ausfallen oder Datenverlust verursachen.
+      Die App ist <strong>pseudonym, nicht anonym</strong>, und Inhalte werden
+      <strong>nur verteilt, solange die App geöffnet ist</strong>.
+    </div>
+
+    <h2>Wie es funktioniert</h2>
+    <ul class="feat">
+      <li><strong>Kein zentraler Inhalts-Server.</strong> Beiträge liegen nicht auf
+        unseren Servern, sondern werden Peer-to-Peer zwischen den Geräten der
+        Teilnehmer verteilt.</li>
+      <li><strong>Identität lokal.</strong> Beim ersten Start wird ein
+        ed25519-Schlüsselpaar auf deinem Gerät erzeugt und dort gespeichert. Es gibt
+        kein Konto und keinen Login-Server. Der öffentliche Schlüssel ist ein
+        dauerhaftes Pseudonym.</li>
+      <li><strong>Inhalte Ende-zu-Ende-verschlüsselt.</strong> Beiträge sind zwischen
+        den Teilnehmern verschlüsselt; der Betreiber kann sie nicht lesen.</li>
+      <li><strong>Verteilung nur online.</strong> Inhalte werden zwischen aktiven
+        Clients verteilt – also nur, solange die App geöffnet ist. Das ist eine
+        bewusste Design-Entscheidung (Akkuschonung), kein Fehler.</li>
+      <li><strong>Relais-Server nur für die Verbindung.</strong> Zur Erreichbarkeit
+        (NAT-Traversal) laufen Relais-Server. Sie sehen Verbindungs-Metadaten
+        (IP-Adresse, PeerId, Verbindungszeitpunkte), aber keine Inhalte.</li>
+    </ul>
+
+    <h2>Was social-p2p ehrlicherweise nicht ist</h2>
+    <ul class="feat">
+      <li>Nicht „100 % anonym". Dein öffentlicher Schlüssel, deine IP gegenüber den
+        Relais und dein Beziehungsgraph sind sichtbar.</li>
+      <li>Kein garantiertes „alles löschen"-Versprechen. Bereits an andere verteilte
+        oder entschlüsselte Kopien lassen sich technisch nicht zurückholen
+        (siehe <a href="account-deletion/">Konto &amp; Daten löschen</a>).</li>
+      <li>Kein Ersatz für ein zuverlässiges Produkt – es ist eine Beta.</li>
+    </ul>
+
+    <h2>Rechtliches &amp; Hilfe</h2>
+    <div class="cards">
+      <a class="card" href="privacy/">
+        <div class="t">Datenschutzerklärung</div>
+        <div class="d">Welche Daten wo verarbeitet werden – und die ehrlichen Grenzen.</div>
+      </a>
+      <a class="card" href="terms/">
+        <div class="t">Nutzungsbedingungen</div>
+        <div class="d">Beta-Charakter, Verhaltensregeln, Haftung, Mindestalter.</div>
+      </a>
+      <a class="card" href="support/">
+        <div class="t">Support &amp; Kontakt</div>
+        <div class="d">Probleme melden, Missbrauch melden, kurze FAQ.</div>
+      </a>
+      <a class="card" href="account-deletion/">
+        <div class="t">Konto &amp; Daten löschen</div>
+        <div class="d">Wie du deine Identität und Daten entfernst – inkl. Grenzen.</div>
+      </a>
+    </div>
+
+    <p class="small">
+      Mindestalter: 17 Jahre. Diese App richtet sich nicht an Kinder.
+    </p>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <nav aria-label="Fußzeile">
+        <ul>
+          <li><a href="./">Start</a></li>
+          <li><a href="privacy/">Datenschutz</a></li>
+          <li><a href="terms/">Nutzungsbedingungen</a></li>
+          <li><a href="support/">Support</a></li>
+          <li><a href="account-deletion/">Konto löschen</a></li>
+        </ul>
+      </nav>
+      <p>social-p2p · Closed Beta · Diese Seiten sind Beta-Eckpunkte und ersetzen keine Rechtsberatung.</p>
+    </div>
+  </footer>
+</body>
+</html>

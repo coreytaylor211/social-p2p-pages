@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Datenschutzerklärung — social-p2p (Beta)</title>
+  <meta name="description" content="Datenschutzerklärung der social-p2p Closed Beta: lokale Identität, E2E-verschlüsselte Inhalte, Verbindungs-Metadaten an Relais, ehrliche Lösch-Grenzen.">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="../">social<span>-p2p</span></a>
+      <nav class="site" aria-label="Hauptnavigation">
+        <ul>
+          <li><a href="../privacy/">Datenschutz</a></li>
+          <li><a href="../terms/">Nutzungsbedingungen</a></li>
+          <li><a href="../support/">Support</a></li>
+          <li><a href="../account-deletion/">Konto löschen</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <span class="badge">Stand: Closed Beta · Beta-Eckpunkte</span>
+    <h1>Datenschutzerklärung</h1>
+    <p class="muted">
+      Diese Erklärung beschreibt die Datenverarbeitung der <strong>social-p2p Closed Beta</strong>
+      (Vorabversion). Sie ist bewusst ehrlich über die Grenzen einer dezentralen Architektur.
+    </p>
+
+    <div class="note">
+      <strong>Beta-Hinweis:</strong> Dies ist ein Beta-Stand. Die endgültige, anwaltlich
+      geprüfte Fassung folgt vor einem öffentlichen Launch. Diese Seite ist keine
+      verbindliche Rechtsberatung.
+    </div>
+
+    <h2>1. Verantwortlicher</h2>
+    <p>
+      Verantwortlich für die hier beschriebene Verarbeitung (insbesondere den Betrieb der
+      Relais-Server) im Sinne der DSGVO ist:
+    </p>
+    <p>
+      <strong>RocDev Solutions</strong><br>
+      Industriestraße 13<br>
+      29559 Wieren<br>
+      Deutschland
+    </p>
+    <p>
+      Kontakt für Anfragen zu deinen Rechten und für Missbrauchsmeldungen:
+      <strong><a href="mailto:phillipprochel@icloud.com">phillipprochel@icloud.com</a></strong>
+      (siehe auch <a href="../support/">Support-Seite</a>).
+    </p>
+
+    <h2>2. Grundprinzip: dezentral, kein zentraler Inhalts-Server</h2>
+    <p>
+      social-p2p ist eine dezentrale Peer-to-Peer-App. Es gibt <strong>keinen zentralen
+      Inhalts-Server</strong> und <strong>kein Nutzerkonto</strong> bei uns. Beiträge werden
+      direkt zwischen den Geräten der Teilnehmer verteilt – und zwar nur, <strong>solange
+      die App geöffnet ist</strong>. Wir betreiben jedoch <strong>Relais-Server</strong>,
+      die zur Erreichbarkeit der Geräte nötig sind und dabei Verbindungs-Metadaten
+      verarbeiten (Abschnitt 4).
+    </p>
+
+    <h2>3. Identität und Inhalte (auf deinem Gerät / E2E)</h2>
+    <h3>Identität (lokal)</h3>
+    <p>
+      Beim ersten Start erzeugt die App ein <strong>ed25519-Schlüsselpaar</strong>, das
+      <strong>ausschließlich auf deinem Gerät</strong> gespeichert wird (iOS Keychain /
+      Android Keystore). Es gibt keinen Login und keinen Identitäts-Server. Der
+      <strong>öffentliche Schlüssel</strong> ist ein <strong>dauerhaftes Pseudonym</strong>
+      (personenbezogen) und in deinen Beiträgen sichtbar.
+    </p>
+    <h3>Inhalte (Beiträge, Fotos)</h3>
+    <p>
+      Inhalte werden <strong>Ende-zu-Ende-verschlüsselt</strong> zwischen Teilnehmern
+      verteilt. Sie werden <strong>nicht im Klartext zentral gespeichert</strong>; der
+      Betreiber kann sie <strong>nicht lesen</strong>.
+    </p>
+    <h3>P2P-Verteilung / Replikation (wichtig)</h3>
+    <p>
+      Zur Verfügbarkeit werden Inhalte <strong>mehrfach an andere Teilnehmer/Relais-Seeds
+      repliziert</strong>. Das bedeutet: Kopien deiner (verschlüsselten) Inhalte können
+      auf <strong>fremden Geräten</strong> liegen. Das ist Architektur und kein Fehler –
+      es hat Folgen für das Löschen (Abschnitt 6).
+    </p>
+
+    <h2>4. Verbindungs-Metadaten an die Relais-Server</h2>
+    <p>
+      Damit Geräte sich auch hinter Routern/NAT erreichen, betreiben wir Relais-Server.
+      Diese verarbeiten:
+    </p>
+    <table>
+      <thead><tr><th>Datum</th><th>Zweck</th></tr></thead>
+      <tbody>
+        <tr><td><strong>IP-Adresse</strong></td><td>Verbindungsaufbau, NAT-Traversal, Erreichbarkeit</td></tr>
+        <tr><td><strong>PeerId</strong> (Netzwerk-Kennung, an deinen Schlüssel gebunden)</td><td>Vermittlung der Verbindung zwischen Peers</td></tr>
+        <tr><td><strong>Verbindungszeitpunkte / -ereignisse</strong></td><td>Verfügbarkeit, Missbrauchs-/Überlastabwehr</td></tr>
+      </tbody>
+    </table>
+    <p>
+      <strong>Rechtsgrundlage:</strong> berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO)
+      an einer funktionierenden, missbrauchssicheren Zustellung; ergänzend die freiwillige
+      Beta-Teilnahme (lit. a/b).
+    </p>
+    <p>
+      <strong>Aufbewahrung (Retention):</strong> Es werden <strong>keine dauerhaften
+      Verbindungslogs</strong> geführt. Die Relais verarbeiten die genannten
+      Verbindungs-Metadaten (IP-Adresse, PeerId, Verbindungszeitpunkte)
+      <strong>ausschließlich flüchtig im Arbeitsspeicher</strong> – und nur so lange, wie
+      es für Routing bzw. NAT-Traversal technisch nötig ist. Es findet
+      <strong>keine Speicherung auf einem Datenträger und keine Protokollierung (Logging)
+      dieser Verbindungsdaten</strong> statt. Damit setzen wir den Grundsatz der
+      Datenminimierung (Art. 5 Abs. 1 lit. c DSGVO) um.
+    </p>
+
+    <h2>5. Auftragsverarbeiter und Drittland</h2>
+    <p>
+      Die Relais-Infrastruktur wird bei einem Hosting-Anbieter betrieben, der die
+      Verbindungs-Metadaten in unserem Auftrag verarbeitet (Auftragsverarbeitung, Art. 28 DSGVO).
+    </p>
+    <p>
+      Die Relais-Infrastruktur wird derzeit beim Anbieter <strong>Railway</strong> mit
+      Serverstandort in den <strong>USA</strong> betrieben. Damit findet ein
+      <strong>Datentransfer in ein Drittland</strong> statt. Grundlage hierfür ist der
+      Angemessenheitsrahmen des <strong>EU-US Data Privacy Framework (DPF)</strong> bzw. – soweit
+      einschlägig – die <strong>Standardvertragsklauseln (SCC)</strong> der EU-Kommission. Ein
+      Auftragsverarbeitungsvertrag (AVV/DPA) mit dem Hoster wird abgeschlossen.
+    </p>
+    <p>
+      Da die Relais Verbindungs-Metadaten ausschließlich flüchtig im Arbeitsspeicher
+      verarbeiten und nicht persistent speichern (Abschnitt 4), ist der Umfang des
+      Drittland-Transfers auf das technisch Notwendige begrenzt. Als Ausblick ist
+      <strong>ein zusätzlicher Relais innerhalb der EU geplant</strong>, um den Transfer
+      weiter zu reduzieren; dieser ist derzeit noch nicht im Einsatz.
+    </p>
+
+    <h2>6. Löschen und seine ehrlichen Grenzen</h2>
+    <p>
+      Das Löschen erfolgt durch einen <strong>Lösch-Marker (Tombstone)</strong> und das
+      <strong>Vergessen des Schlüssels</strong>, mit dem der Inhalt verschlüsselt war – das
+      Chiffrat wird damit unlesbar.
+    </p>
+    <div class="note">
+      <strong>Wichtig und ehrlich:</strong> Ein hartes, globales Löschen ist technisch
+      <strong>nicht garantierbar</strong>. Bereits an andere Teilnehmer verteilte oder von
+      ihnen entschlüsselte Kopien können <strong>nicht zurückgeholt werden</strong>.
+      Gelöschte Inhalte werden durch das Vergessen des Schlüssels unlesbar gemacht; das ist
+      die stärkste verfügbare Maßnahme in einer dezentralen Architektur.
+    </div>
+    <p>Mehr dazu: <a href="../account-deletion/">Konto &amp; Daten löschen</a>.</p>
+
+    <h2>7. Pseudonym ist nicht anonym</h2>
+    <p>
+      Auch wenn du keinen Klarnamen angibst, bist du nicht anonym: Dein öffentlicher
+      Schlüssel ist ein dauerhaftes, verkettbares Pseudonym; deine IP-Adresse ist den
+      Relais gegenüber sichtbar; aus Beziehungen (wem du folgst, mit wem du interagierst)
+      kann ein Beziehungsgraph entstehen. Wir behaupten ausdrücklich <strong>kein
+      „100 % anonym" und keine Unverfolgbarkeit</strong>.
+    </p>
+
+    <h2>8. Speicherdauer (Übersicht)</h2>
+    <ul class="feat">
+      <li><strong>Lokale Identität/Daten:</strong> auf deinem Gerät, bis du sie löschst.</li>
+      <li><strong>Verteilte (verschlüsselte) Inhalte:</strong> je nach Replikation/Lebensdauer
+        im Netz; nach dem Löschen durch Schlüssel-Vergessen unlesbar.</li>
+      <li><strong>Relais-Metadaten:</strong> minimal (siehe Abschnitt 4).</li>
+    </ul>
+
+    <h2>9. Deine Rechte (Art. 15–22 DSGVO)</h2>
+    <p>
+      Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch
+      und Datenübertragbarkeit. So setzt du sie in diesem dezentralen System um:
+    </p>
+    <ul class="feat">
+      <li><strong>Deine Identität und lokalen Daten</strong> kontrollierst du direkt in der
+        App (Löschfunktion, siehe <a href="../account-deletion/">Konto löschen</a>).</li>
+      <li><strong>Für Relais-Metadaten</strong> (z. B. Auskunft/Löschung) wende dich an
+        unseren <a href="../support/">Kontakt</a>.</li>
+      <li><strong>Ehrliche Grenze:</strong> Bei bereits verteilten Inhaltskopien können wir
+        nur die beschriebenen technischen Maßnahmen (Tombstone + Schlüssel-Vergessen) anbieten.</li>
+    </ul>
+    <p>
+      Du hast außerdem das Recht, dich bei einer <strong>Datenschutz-Aufsichtsbehörde</strong>
+      zu beschweren.
+    </p>
+
+    <h2>10. Minderjährige</h2>
+    <p>
+      Die App richtet sich an Personen ab <strong>17 Jahren</strong> und nicht an Kinder.
+      In der Beta werden gezielt nur volljährige bzw. mindestens 16-jährige Tester eingeladen.
+    </p>
+
+    <p class="small">
+      Diese Datenschutzerklärung ist ein Beta-Stand und wird vor einem öffentlichen Launch
+      anwaltlich finalisiert.
+    </p>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <nav aria-label="Fußzeile">
+        <ul>
+          <li><a href="../">Start</a></li>
+          <li><a href="../privacy/">Datenschutz</a></li>
+          <li><a href="../terms/">Nutzungsbedingungen</a></li>
+          <li><a href="../support/">Support</a></li>
+          <li><a href="../account-deletion/">Konto löschen</a></li>
+        </ul>
+      </nav>
+      <p>social-p2p · Closed Beta · Beta-Eckpunkte, keine Rechtsberatung.</p>
+    </div>
+  </footer>
+</body>
+</html>

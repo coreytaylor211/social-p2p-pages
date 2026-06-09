@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Datenschutzerklärung — social-p2p (Beta)</title>
-  <meta name="description" content="Datenschutzerklärung der social-p2p Closed Beta: lokale Identität, E2E-verschlüsselte Inhalte, Verbindungs-Metadaten an Relais, ehrliche Lösch-Grenzen.">
+  <title>Datenschutzerklärung — Nodo (social-p2p)</title>
+  <meta name="description" content="Datenschutzerklärung von Nodo: lokale Identität (Keychain), öffentlicher Hauptkanal als öffentliches PII, Relais (Railway/USA) als Store-and-Forward-Speicher, eingebettete Videos, ehrliche Lösch-Grenzen.">
   <meta name="robots" content="noindex">
   <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -17,6 +17,7 @@
         <ul>
           <li><a href="../privacy/">Datenschutz</a></li>
           <li><a href="../terms/">Nutzungsbedingungen</a></li>
+          <li><a href="../dsa/">Plattform-Regeln (DSA)</a></li>
           <li><a href="../support/">Support</a></li>
           <li><a href="../account-deletion/">Konto löschen</a></li>
         </ul>
@@ -25,23 +26,25 @@
   </header>
 
   <main id="main">
-    <span class="badge">Stand: Closed Beta · Beta-Eckpunkte</span>
-    <h1>Datenschutzerklärung</h1>
+    <span class="badge">Stand: 9. Juni 2026 · Vorabversion</span>
+    <h1>Datenschutzerklärung — Nodo</h1>
     <p class="muted">
-      Diese Erklärung beschreibt die Datenverarbeitung der <strong>social-p2p Closed Beta</strong>
-      (Vorabversion). Sie ist bewusst ehrlich über die Grenzen einer dezentralen Architektur.
+      Diese Erklärung beschreibt, welche personenbezogenen Daten bei der Nutzung von
+      <strong>Nodo</strong> wo verarbeitet werden – und sie ist bewusst ehrlich über die
+      Grenzen einer dezentralen Architektur. Sie ist keine verbindliche Rechtsberatung.
     </p>
 
     <div class="note">
-      <strong>Beta-Hinweis:</strong> Dies ist ein Beta-Stand. Die endgültige, anwaltlich
-      geprüfte Fassung folgt vor einem öffentlichen Launch. Diese Seite ist keine
-      verbindliche Rechtsberatung.
+      <strong>Hinweis (Stand &amp; Geltung):</strong> Nodo wird derzeit als Vorabversion
+      betrieben. Diese Fassung wird vor einem vollständig offenen Launch fachanwaltlich
+      finalisiert. Wo wir etwas (noch) nicht garantieren können, sagen wir es offen.
     </div>
 
     <h2>1. Verantwortlicher</h2>
     <p>
-      Verantwortlich für die hier beschriebene Verarbeitung (insbesondere den Betrieb der
-      Relais-Server) im Sinne der DSGVO ist:
+      Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) für die hier
+      beschriebene Verarbeitung – insbesondere für den Betrieb der Relais-Server und des
+      öffentlichen Hauptkanals – ist:
     </p>
     <p>
       <strong>RocDev Solutions</strong><br>
@@ -50,166 +53,330 @@
       Deutschland
     </p>
     <p>
-      Kontakt für Anfragen zu deinen Rechten und für Missbrauchsmeldungen:
+      Kontakt für alle Anliegen zum Datenschutz, zu deinen Betroffenenrechten und für
+      Missbrauchsmeldungen:
       <strong><a href="mailto:phillipprochel@icloud.com">phillipprochel@icloud.com</a></strong>
       (siehe auch <a href="../support/">Support-Seite</a>).
     </p>
-
-    <h2>2. Grundprinzip: dezentral, kein zentraler Inhalts-Server</h2>
     <p>
-      social-p2p ist eine dezentrale Peer-to-Peer-App. Es gibt <strong>keinen zentralen
-      Inhalts-Server</strong> und <strong>kein Nutzerkonto</strong> bei uns. Beiträge werden
-      direkt zwischen den Geräten der Teilnehmer verteilt – und zwar nur, <strong>solange
-      die App geöffnet ist</strong>. Wir betreiben jedoch <strong>Relais-Server</strong>,
-      die zur Erreichbarkeit der Geräte nötig sind und dabei Verbindungs-Metadaten
-      verarbeiten (Abschnitt 4).
+      Diese E-Mail-Adresse ist zugleich unsere <strong>Kontaktstelle nach dem
+      Digitale-Dienste-Gesetz (DDG) und dem Digital Services Act (DSA)</strong>
+      (siehe <a href="../dsa/">Plattform-Regeln &amp; Meldungen (DSA)</a>).
     </p>
 
-    <h2>3. Identität und Inhalte (auf deinem Gerät / E2E)</h2>
-    <h3>Identität (lokal)</h3>
+    <h2>2. Grundprinzip: zwei strikt getrennte Bereiche</h2>
     <p>
-      Beim ersten Start erzeugt die App ein <strong>ed25519-Schlüsselpaar</strong>, das
-      <strong>ausschließlich auf deinem Gerät</strong> gespeichert wird (iOS Keychain /
-      Android Keystore). Es gibt keinen Login und keinen Identitäts-Server. Der
-      <strong>öffentliche Schlüssel</strong> ist ein <strong>dauerhaftes Pseudonym</strong>
-      (personenbezogen) und in deinen Beiträgen sichtbar.
+      Nodo besteht aus zwei bewusst getrennten Bereichen, die datenschutzrechtlich
+      <strong>sehr unterschiedlich</strong> funktionieren. Diese Trennung ist der Kern, um
+      zu verstehen, welche deiner Daten privat bleiben und welche öffentlich sind:
     </p>
-    <h3>Inhalte (Beiträge, Fotos)</h3>
+    <ul class="feat">
+      <li><strong>A) Der öffentliche Hauptkanal (Entdeckung / Schaufenster).</strong> Hier
+        stellst du als Creator eine öffentliche „Werbeanzeige" (Promo-Karte) für deinen
+        Kanal ein, damit dich neue Leute finden. Diese Inhalte sind <strong>öffentlich,
+        unverschlüsselt und für jedermann sichtbar</strong>. Sie enthalten personenbezogene
+        Daten (z. B. deinen Kanalnamen und dein Profilbild). Hierauf bezieht sich der
+        Großteil dieser Erklärung, weil hier am meisten verarbeitet wird.</li>
+      <li><strong>B) Der private Follower-Feed (das „Heiligtum").</strong> Inhalte, die du
+        an deine Follower postest, werden <strong>Ende-zu-Ende-verschlüsselt</strong>
+        zugestellt. Wir als Betreiber <strong>können diese Inhalte nicht lesen</strong> –
+        auch dann nicht, wenn sie über unsere Relais-Server laufen (dazu Abschnitt 5).</li>
+    </ul>
     <p>
-      Inhalte werden <strong>Ende-zu-Ende-verschlüsselt</strong> zwischen Teilnehmern
-      verteilt. Sie werden <strong>nicht im Klartext zentral gespeichert</strong>; der
-      Betreiber kann sie <strong>nicht lesen</strong>.
-    </p>
-    <h3>P2P-Verteilung / Replikation (wichtig)</h3>
-    <p>
-      Zur Verfügbarkeit werden Inhalte <strong>mehrfach an andere Teilnehmer/Relais-Seeds
-      repliziert</strong>. Das bedeutet: Kopien deiner (verschlüsselten) Inhalte können
-      auf <strong>fremden Geräten</strong> liegen. Das ist Architektur und kein Fehler –
-      es hat Folgen für das Löschen (Abschnitt 6).
-    </p>
-
-    <h2>4. Verbindungs-Metadaten an die Relais-Server</h2>
-    <p>
-      Damit Geräte sich auch hinter Routern/NAT erreichen, betreiben wir Relais-Server.
-      Diese verarbeiten:
-    </p>
-    <table>
-      <thead><tr><th>Datum</th><th>Zweck</th></tr></thead>
-      <tbody>
-        <tr><td><strong>IP-Adresse</strong></td><td>Verbindungsaufbau, NAT-Traversal, Erreichbarkeit</td></tr>
-        <tr><td><strong>PeerId</strong> (Netzwerk-Kennung, an deinen Schlüssel gebunden)</td><td>Vermittlung der Verbindung zwischen Peers</td></tr>
-        <tr><td><strong>Verbindungszeitpunkte / -ereignisse</strong></td><td>Verfügbarkeit, Missbrauchs-/Überlastabwehr</td></tr>
-      </tbody>
-    </table>
-    <p>
-      <strong>Rechtsgrundlage:</strong> berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO)
-      an einer funktionierenden, missbrauchssicheren Zustellung; ergänzend die freiwillige
-      Beta-Teilnahme (lit. a/b).
-    </p>
-    <p>
-      <strong>Aufbewahrung (Retention):</strong> Es werden <strong>keine dauerhaften
-      Verbindungslogs</strong> geführt. Die Relais verarbeiten die genannten
-      Verbindungs-Metadaten (IP-Adresse, PeerId, Verbindungszeitpunkte)
-      <strong>ausschließlich flüchtig im Arbeitsspeicher</strong> – und nur so lange, wie
-      es für Routing bzw. NAT-Traversal technisch nötig ist. Es findet
-      <strong>keine Speicherung auf einem Datenträger und keine Protokollierung (Logging)
-      dieser Verbindungsdaten</strong> statt. Damit setzen wir den Grundsatz der
-      Datenminimierung (Art. 5 Abs. 1 lit. c DSGVO) um.
+      Es gibt <strong>kein Nutzerkonto</strong> und <strong>keinen Login</strong> bei uns.
+      Deine Identität ist ein kryptografisches Schlüsselpaar auf deinem Gerät (Abschnitt 3).
     </p>
 
-    <h2>5. Auftragsverarbeiter und Drittland</h2>
+    <h2>3. Identität und lokale Speicherung auf deinem Gerät</h2>
     <p>
-      Die Relais-Infrastruktur wird bei einem Hosting-Anbieter betrieben, der die
-      Verbindungs-Metadaten in unserem Auftrag verarbeitet (Auftragsverarbeitung, Art. 28 DSGVO).
+      Beim ersten Start erzeugt die App ein <strong>ed25519-Schlüsselpaar</strong>. Der
+      <strong>private Schlüssel</strong> wird <strong>ausschließlich auf deinem Gerät</strong>
+      im hardwaregestützten Schlüsselspeicher (iOS Keychain / Android Keystore) gespeichert
+      und verlässt dein Gerät nicht. Es gibt keinen Identitäts-Server.
     </p>
     <p>
-      Die Relais-Infrastruktur wird derzeit beim Anbieter <strong>Railway</strong> mit
-      Serverstandort in den <strong>USA</strong> betrieben. Damit findet ein
-      <strong>Datentransfer in ein Drittland</strong> statt. Grundlage hierfür ist der
-      Angemessenheitsrahmen des <strong>EU-US Data Privacy Framework (DPF)</strong> bzw. – soweit
-      einschlägig – die <strong>Standardvertragsklauseln (SCC)</strong> der EU-Kommission. Ein
-      Auftragsverarbeitungsvertrag (AVV/DPA) mit dem Hoster wird abgeschlossen.
+      Dein <strong>öffentlicher Schlüssel (Pubkey)</strong> ist ein <strong>dauerhaftes,
+      eindeutiges Pseudonym</strong>. Er ist personenbezogen im Sinne der DSGVO und in
+      deinen öffentlichen Inhalten (Promos, Profil, ggf. Kommentare) sichtbar sowie an deine
+      Beiträge gebunden.
     </p>
     <p>
-      Da die Relais Verbindungs-Metadaten ausschließlich flüchtig im Arbeitsspeicher
-      verarbeiten und nicht persistent speichern (Abschnitt 4), ist der Umfang des
-      Drittland-Transfers auf das technisch Notwendige begrenzt. Als Ausblick ist
-      <strong>ein zusätzlicher Relais innerhalb der EU geplant</strong>, um den Transfer
-      weiter zu reduzieren; dieser ist derzeit noch nicht im Einsatz.
+      Weiter auf deinem Gerät gespeichert: deine Liste der Gefolgten, lokale Spitznamen,
+      deine eigenen Beiträge und Schlüssel. Diese lokalen Daten kontrollierst du selbst und
+      kannst sie über die Löschfunktion der App entfernen (siehe Abschnitt 9 und
+      <a href="../account-deletion/">Konto &amp; Daten löschen</a>).
     </p>
     <p>
-      <strong>DNS-Auflösung über Cloudflare/Google (USA):</strong> Um die Adresse unserer
-      Relais-Server zu ermitteln, löst die App den Server-Namen über die öffentlichen
-      DNS-Resolver von <strong>Cloudflare (1.1.1.1)</strong> und <strong>Google (8.8.8.8)</strong>
-      auf. Dabei wird bei Verbindungsaufbau deine <strong>IP-Adresse</strong> zusammen mit dem
-      angefragten Servernamen an diese Anbieter in den <strong>USA</strong> übermittelt. Cloudflare
-      und Google sind dabei <strong>eigenständig Verantwortliche</strong> (kein
-      Auftragsverarbeitungsverhältnis mit uns). Zweck ist allein die <strong>Erreichbarkeit der
-      Relais</strong>; Rechtsgrundlage ist unser <strong>berechtigtes Interesse</strong> an einer
-      funktionierenden Verbindung (Art. 6 Abs. 1 lit. f DSGVO). Der Drittland-Transfer in die USA
-      stützt sich auf das <strong>EU-US Data Privacy Framework</strong> bzw. die
-      <strong>Standardvertragsklauseln</strong> der EU-Kommission.
+      <strong>Rechtsgrundlage:</strong> Erfüllung des von dir gewünschten Dienstes
+      (Art. 6 Abs. 1 lit. b DSGVO) sowie unser berechtigtes Interesse an einer
+      funktionierenden, sicheren App (Art. 6 Abs. 1 lit. f DSGVO).
     </p>
 
-    <h2>6. Löschen und seine ehrlichen Grenzen</h2>
+    <h2>4. Öffentlicher Hauptkanal: Profile, Promos, Projekte, Engagement (öffentliches PII)</h2>
     <p>
-      Das Löschen erfolgt durch einen <strong>Lösch-Marker (Tombstone)</strong> und das
-      <strong>Vergessen des Schlüssels</strong>, mit dem der Inhalt verschlüsselt war – das
-      Chiffrat wird damit unlesbar.
+      Wenn du als Creator am Hauptkanal teilnimmst, werden folgende Daten
+      <strong>öffentlich</strong> sichtbar gemacht, signiert mit deinem Schlüssel,
+      <strong>dezentral an andere Teilnehmer verbreitet und zusätzlich auf unseren
+      Relais-Servern als Replikat gespeichert</strong> (Store-and-Forward, siehe Abschnitt 5):
+    </p>
+    <ul class="feat">
+      <li><strong>Öffentliches Kanal-Profil:</strong> Kanalname, <strong>Pflicht-Profilbild
+        (Avatar)</strong>, Beschreibung. Kanalname und Bild sind <strong>öffentliche
+        personenbezogene Daten</strong> und für jedermann sichtbar.</li>
+      <li><strong>Promo-Karten:</strong> Titel, Kategorie, Pitch-Text, Cover-Bild, Verweis
+        auf deine Identität (Pubkey).</li>
+      <li><strong>Projekte/Beiträge im öffentlichen Bereich</strong> sowie ggf.
+        <strong>Kommentare</strong>, soweit du sie öffentlich einstellst – diese sind
+        öffentlich und können von Dritten gelesen, zitiert und kopiert werden.</li>
+      <li><strong>Engagement-/Boost-Signale:</strong> öffentliche Likes/Follower-Ereignisse
+        sowie – falls du eine Promo bewirbst – ein öffentliches <strong>Boost-Ticket</strong>
+        (deine Promo erscheint dann als „Beworben").</li>
+    </ul>
+    <div class="note">
+      <strong>Wichtig und ehrlich:</strong> Diese Daten sind <strong>bewusst öffentlich</strong>
+      – das ist der Zweck eines Schaufensters, in dem dich neue Follower finden sollen. Sie
+      sind <strong>nicht</strong> privat und <strong>nicht</strong> verschlüsselt. Bedenke,
+      dass öffentliche Inhalte von Dritten kopiert oder zwischengespeichert werden können; ein
+      vollständiges, weltweites Zurückholen ist technisch nicht garantierbar (Abschnitt 9).
+    </div>
+    <p>
+      <strong>Engagement-Aggregator:</strong> Zur Anzeige öffentlicher Zähler (z. B.
+      Like-Summen) wertet ein Dienst auf unserem Relais <strong>ausschließlich die ohnehin
+      öffentlichen</strong> Ereignisse aus und signiert die Summe. Er sieht <strong>keine</strong>
+      privaten Feed-Inhalte. Öffentliche Engagement-Zahlen sind nur ein Indikator und können
+      durch Mehrfach-Identitäten verzerrt sein – sie sind keine geprüfte Wahrheit.
+    </p>
+    <p>
+      <strong>Rechtsgrundlagen:</strong> Erbringung des von dir als Creator gewünschten
+      Entdeckungs-/Schaufenster-Dienstes (Art. 6 Abs. 1 lit. b DSGVO) sowie unser und dein
+      berechtigtes Interesse an Auffindbarkeit und an einem funktionierenden öffentlichen
+      Bereich (Art. 6 Abs. 1 lit. f DSGVO). Der <strong>private Follower-Feed</strong> (B) ist
+      hiervon nicht betroffen und bleibt Ende-zu-Ende-verschlüsselt.
+    </p>
+
+    <h2>5. Relais-Server (Railway, USA): Verbindung + Speicherung von Inhalten</h2>
+    <p>
+      Damit deine Beiträge auch dann ankommen, wenn du oder dein Empfänger gerade offline
+      ist, betreiben wir <strong>Relais-Server</strong>. Diese erfüllen zwei Funktionen – und
+      beide bedeuten <strong>Speicherung</strong>, nicht nur flüchtige Verarbeitung:
+    </p>
+    <ol class="feat">
+      <li><strong>Verbindungs-Metadaten (Routing/NAT-Traversal):</strong> Beim Verbindungs-
+        aufbau verarbeiten die Relais deine <strong>IP-Adresse</strong>, deine
+        <strong>PeerId</strong> (an deinen Schlüssel gebundene Netzwerk-Kennung) und
+        <strong>Verbindungszeitpunkte/-ereignisse</strong>, um Geräte hinter Routern
+        erreichbar zu machen und Missbrauch/Überlast abzuwehren. <em>Rechtsgrundlage:
+        berechtigtes Interesse an funktionierender, missbrauchssicherer Zustellung
+        (Art. 6 Abs. 1 lit. f DSGVO).</em></li>
+      <li><strong>Store-and-Forward-Replikat (Speicherung):</strong> Die Relais
+        <strong>speichern und replizieren</strong>
+        <ul class="feat">
+          <li><strong>Ende-zu-Ende-verschlüsselte Beiträge (Envelopes)</strong> des
+            Follower-Feeds – als <strong>Chiffrat</strong>. Wir können den Inhalt
+            <strong>nicht entschlüsseln und nicht lesen</strong>; wir halten lediglich
+            verschlüsselte Datenpakete zwischen, damit Follower sie auch bei Autor-offline
+            empfangen.</li>
+          <li><strong>öffentliche Hauptkanal-Objekte</strong> (Profile, Promos,
+            Boost-Tickets, öffentliche Bilder, Moderations-/Blocklisten) – diese liegen
+            content-adressiert und <strong>unverschlüsselt</strong> vor, weil sie ohnehin
+            öffentlich sind.</li>
+        </ul>
+      </li>
+    </ol>
+    <div class="note">
+      <strong>Korrektur gegenüber früheren Versionen (ehrlich):</strong> Eine ältere Fassung
+      beschrieb die Relais als rein „flüchtig im Arbeitsspeicher, ohne Speicherung".
+      <strong>Das trifft nicht mehr zu.</strong> Die Relais <strong>speichern</strong>
+      verschlüsselte Beiträge und öffentliche Inhalte als Replikat (Store-and-Forward).
+      Inhalte des privaten Feeds bleiben dabei für uns <strong>unlesbar verschlüsselt</strong>.
+    </div>
+    <p>
+      <strong>Speicherdauer / Retention:</strong> Replizierte Inhalte werden <strong>so lange
+      vorgehalten, wie es technisch zur Verteilung erforderlich ist; ein festes zeitliches
+      Limit besteht derzeit nicht</strong>. Öffentliche Profile und Promos bleiben
+      gespeichert <strong>bis zu ihrer Tilgung</strong> (Löschung/Tombstone/Widerruf durch
+      dich oder den Betreiber, siehe Abschnitt 9). Dauerhafte Verbindungs-Logs werden nicht zu
+      Werbe-/Profilzwecken geführt.
+    </p>
+    <p>
+      <strong>Auftragsverarbeiter &amp; Drittland (USA):</strong> Die Relais-Infrastruktur
+      wird beim Anbieter <strong>Railway</strong> betrieben (Auftragsverarbeitung nach
+      Art. 28 DSGVO; ein AVV/DPA wird abgeschlossen). Serverstandort ist die <strong>USA</strong>,
+      sodass ein <strong>Datentransfer in ein Drittland</strong> stattfindet. Grundlage hierfür
+      sind die <strong>Standardvertragsklauseln (SCC) der EU-Kommission</strong> samt einer
+      Transfer-Folgenabschätzung (Transfer Impact Assessment).
     </p>
     <div class="note">
-      <strong>Wichtig und ehrlich:</strong> Ein hartes, globales Löschen ist technisch
-      <strong>nicht garantierbar</strong>. Bereits an andere Teilnehmer verteilte oder von
-      ihnen entschlüsselte Kopien können <strong>nicht zurückgeholt werden</strong>.
-      Gelöschte Inhalte werden durch das Vergessen des Schlüssels unlesbar gemacht; das ist
-      die stärkste verfügbare Maßnahme in einer dezentralen Architektur.
+      <strong>Ehrlicher Transfer-/Risikohinweis:</strong> Bei einer Übermittlung in die USA
+      lässt sich – trotz Standardvertragsklauseln – ein behördlicher Zugriff nach US-Recht
+      nicht vollständig ausschließen. Wir reduzieren das Risiko, indem die Inhalte des
+      privaten Feeds nur als <strong>unlesbares Chiffrat</strong> auf dem US-Server liegen;
+      öffentliche Hauptkanal-Inhalte sind ohnehin für jedermann bestimmt. Ein zusätzliches
+      Relais innerhalb der EU zur weiteren Reduzierung des Drittland-Transfers ist als Ausblick
+      vorgesehen, aber derzeit noch nicht im Einsatz.
     </div>
-    <p>Mehr dazu: <a href="../account-deletion/">Konto &amp; Daten löschen</a>.</p>
-
-    <h2>7. Pseudonym ist nicht anonym</h2>
     <p>
-      Auch wenn du keinen Klarnamen angibst, bist du nicht anonym: Dein öffentlicher
-      Schlüssel ist ein dauerhaftes, verkettbares Pseudonym; deine IP-Adresse ist den
-      Relais gegenüber sichtbar; aus Beziehungen (wem du folgst, mit wem du interagierst)
-      kann ein Beziehungsgraph entstehen. Wir behaupten ausdrücklich <strong>kein
-      „100 % anonym" und keine Unverfolgbarkeit</strong>.
+      <strong>DNS-Auflösung (Cloudflare/Google, USA):</strong> Um die Adresse der Relais zu
+      finden, löst die App den Servernamen über die öffentlichen DNS-Resolver von Cloudflare
+      (1.1.1.1) und Google (8.8.8.8) auf; dabei wird deine IP-Adresse mit dem angefragten
+      Servernamen an diese Anbieter (USA) übermittelt. Diese sind dabei eigenständig
+      Verantwortliche. <em>Rechtsgrundlage: berechtigtes Interesse an Erreichbarkeit
+      (Art. 6 Abs. 1 lit. f DSGVO); Drittland-Transfer gestützt auf Standardvertragsklauseln.</em>
     </p>
 
-    <h2>8. Speicherdauer (Übersicht)</h2>
-    <ul class="feat">
-      <li><strong>Lokale Identität/Daten:</strong> auf deinem Gerät, bis du sie löschst.</li>
-      <li><strong>Verteilte (verschlüsselte) Inhalte:</strong> je nach Replikation/Lebensdauer
-        im Netz; nach dem Löschen durch Schlüssel-Vergessen unlesbar.</li>
-      <li><strong>Relais-Metadaten:</strong> minimal (siehe Abschnitt 4).</li>
-    </ul>
-
-    <h2>9. Deine Rechte (Art. 15–22 DSGVO)</h2>
+    <h2>6. Eingebettete externe Videos (YouTube / Vimeo)</h2>
     <p>
-      Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch
-      und Datenübertragbarkeit. So setzt du sie in diesem dezentralen System um:
+      Beiträge können <strong>eingebettete Videos</strong> von YouTube oder Vimeo enthalten.
+      Diese Videos liegen <strong>nicht</strong> bei uns, sondern bei den jeweiligen Anbietern.
     </p>
     <ul class="feat">
-      <li><strong>Deine Identität und lokalen Daten</strong> kontrollierst du direkt in der
-        App (Löschfunktion, siehe <a href="../account-deletion/">Konto löschen</a>).</li>
-      <li><strong>Für Relais-Metadaten</strong> (z. B. Auskunft/Löschung) wende dich an
-        unseren <a href="../support/">Kontakt</a>.</li>
-      <li><strong>Ehrliche Grenze:</strong> Bei bereits verteilten Inhaltskopien können wir
-        nur die beschriebenen technischen Maßnahmen (Tombstone + Schlüssel-Vergessen) anbieten.</li>
+      <li>Wir laden Videos <strong>nicht automatisch</strong>. Du siehst zunächst nur ein
+        Vorschaubild und einen Button „Video laden". <strong>Erst wenn du aktiv auf Abspielen
+        tippst</strong>, wird das Video vom Anbieter geladen (Zwei-Klick-Prinzip).</li>
+      <li><strong>Beim Abspielen</strong> übermittelt dein Gerät deine <strong>IP-Adresse</strong>
+        sowie Geräte-/Nutzungsdaten an <strong>Google (YouTube)</strong> bzw. <strong>Vimeo</strong>
+        in den <strong>USA</strong>; dort können auch Cookies/lokale Speicher gesetzt werden. Wir
+        verwenden, wo möglich, den <strong>datenschutzfreundlicheren
+        <code>youtube-nocookie.com</code>-Modus</strong> – das reduziert, <strong>beseitigt aber
+        nicht</strong> das Tracking durch den Anbieter.</li>
+      <li><strong>Rechtsgrundlage: deine Einwilligung durch das aktive Abspielen</strong>
+        (Art. 6 Abs. 1 lit. a DSGVO; § 25 TDDDG für den Zugriff auf Endgeräte-Informationen).
+        Du erteilst sie je Abspielvorgang neu; vor dem ersten Laden zeigen wir dir einen klaren
+        Hinweis.</li>
+      <li><strong>Ehrliche Einordnung:</strong> Das Einbetten externer Videos <strong>steht im
+        Spannungsverhältnis zu unserem Datenschutz-Versprechen</strong>. Deshalb ist es
+        <strong>opt-in</strong> je Abspielvorgang. Der <strong>Beitragstext selbst bleibt
+        Ende-zu-Ende-verschlüsselt</strong> – nur das externe Video wird vom Drittanbieter
+        geladen.</li>
     </ul>
     <p>
+      Es gelten die Datenschutzerklärungen von Google
+      (<a href="https://policies.google.com/privacy" rel="noopener noreferrer">policies.google.com/privacy</a>)
+      und Vimeo
+      (<a href="https://vimeo.com/privacy" rel="noopener noreferrer">vimeo.com/privacy</a>).
+    </p>
+
+    <h2>7. Bezahlter Boost (Apple In-App-Kauf)</h2>
+    <p>
+      Wenn du eine Promo kostenpflichtig <strong>boostest</strong>, läuft die Zahlung
+      <strong>ausschließlich über Apple (In-App-Kauf)</strong>. <strong>Apple ist
+      Zahlungsabwickler</strong> und verarbeitet deine Zahlungsdaten eigenverantwortlich (es
+      gelten die Datenschutzbestimmungen von Apple).
+    </p>
+    <p>
+      Wir selbst betreiben einen <strong>Boost-Verifier</strong> (auf unserer
+      Relais-Infrastruktur bei Railway/USA), der den <strong>Kaufbeleg von Apple prüft</strong>,
+      um deinen Boost freizuschalten und Mehrfach-Einlösung zu verhindern. Dabei verarbeiten
+      wir: <strong>Apple-Beleg- bzw. Transaktions-Identifier</strong>, deine
+      <strong>Promo-/Creator-Kennung (Pubkey)</strong> sowie einen <strong>Hash des
+      eingelösten Belegs</strong> (Replay-Schutz). Wir erhalten <strong>keine</strong>
+      Kreditkarten-/Kontodaten von dir.
+    </p>
+    <p>
+      <strong>Rechtsgrundlage:</strong> Erfüllung des Boost-Kaufvertrags (Art. 6 Abs. 1 lit. b
+      DSGVO). Drittland-Transfer USA wie in Abschnitt 5 (Standardvertragsklauseln). Apple als
+      eigenständiger Akteur:
+      <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">apple.com/legal/privacy</a>.
+    </p>
+
+    <h2>8. Moderation, Meldungen und Blocklisten</h2>
+    <p>
+      Zur Einhaltung gesetzlicher Pflichten verarbeiten wir <strong>Meldungen über
+      rechtswidrige Inhalte</strong> („PromoReport") und führen eine <strong>signierte
+      Blockliste</strong> gelisteter Inhalte/Kennungen. Dabei werden die <strong>Kennung
+      (Pubkey) gemeldeter und meldender</strong> Nutzer sowie die betroffene
+      Promo-/Inhalts-ID verarbeitet. Einzelheiten zum Melde- und Beschwerdeverfahren stehen
+      auf der Seite <a href="../dsa/">Plattform-Regeln &amp; Meldungen (DSA)</a>.
+      <em>Rechtsgrundlagen: rechtliche Verpflichtung und berechtigtes Interesse an einer
+      rechtskonformen Plattform (Art. 6 Abs. 1 lit. c und f DSGVO).</em>
+    </p>
+
+    <h2>9. Löschen und seine ehrlichen Grenzen (Art. 17 DSGVO)</h2>
+    <p>
+      Du hast das Recht auf Löschung. So setzen wir es um – und wo die dezentrale Architektur
+      an Grenzen stößt, sagen wir es offen:
+    </p>
+    <ul class="feat">
+      <li><strong>Deine lokalen Daten und Identität:</strong> löschst du direkt in der App
+        (Löschfunktion / „Konto &amp; Daten löschen"). Diese Löschung ist auf deinem Gerät
+        vollständig.</li>
+      <li><strong>Private (E2E-verschlüsselte) Beiträge:</strong> Beim Zurückziehen setzen wir
+        einen <strong>Lösch-Marker (Tombstone)</strong> und <strong>vergessen den
+        Schlüssel</strong>, mit dem der Inhalt verschlüsselt war. Das Chiffrat wird dadurch
+        <strong>unlesbar</strong> – auch in den Relais-Replikaten. Dies ist die stärkste
+        verfügbare Maßnahme.</li>
+      <li><strong>Öffentliche Profile, Promos und Kommentare:</strong> Wenn du dein
+        Profil/Projekt löschst, wird es <strong>von deinem Gerät entfernt</strong> und ein
+        <strong>signierter Lösch-Vermerk (Tombstone)</strong> im Netz verteilt, sodass andere
+        Geräte es ausblenden. Die <strong>vollständige Löschung der zwischengespeicherten Kopie
+        auf dem Verteil-Server (Relais) ist in Vorbereitung</strong>. Bereits an andere
+        Teilnehmer weiterverteilte Kopien können in einem dezentralen Netz nicht garantiert
+        sofort überall verschwinden.</li>
+    </ul>
+    <div class="note">
+      <strong>Wichtig und ehrlich:</strong> Ein <strong>hartes, weltweites Löschen ist
+      technisch nicht garantierbar.</strong> Inhalte werden dezentral an viele Teilnehmer
+      verteilt. Bereits <strong>entschlüsselte oder kopierte Inhalte</strong> und Kopien auf
+      <strong>fremden oder nicht-konformen Geräten</strong> können wir <strong>nicht
+      zurückholen</strong>. Insbesondere <strong>öffentliche Profildaten (Kanalname,
+      Profilbild)</strong> wurden möglicherweise schon kopiert/zwischengespeichert. Wir
+      ergreifen alle uns verfügbaren, zumutbaren technischen Mittel (Tombstone,
+      Schlüssel-Vergessen, Blockliste; die aktive Tilgung der Relais-Kopie ist in Vorbereitung)
+      – eine vollständige Garantie über das von uns Kontrollierte hinaus gibt es in einer
+      dezentralen Architektur jedoch nicht. Diese Offenheit ist selbst Teil unserer
+      Transparenzpflicht (Art. 13 DSGVO).
+    </div>
+    <p>
+      Für die Löschung von Daten, die nur wir kontrollieren (z. B. Relais-Replikat,
+      Boost-Belege), genügt eine Nachricht an
+      <strong><a href="mailto:phillipprochel@icloud.com">phillipprochel@icloud.com</a></strong>.
+      Mehr dazu: <a href="../account-deletion/">Konto &amp; Daten löschen</a>.
+    </p>
+
+    <h2>10. Deine Rechte (Art. 15–22 DSGVO)</h2>
+    <p>
+      Du hast das Recht auf <strong>Auskunft (Art. 15)</strong>, <strong>Berichtigung
+      (Art. 16)</strong>, <strong>Löschung (Art. 17, mit den in Abschnitt 9 genannten
+      Grenzen)</strong>, <strong>Einschränkung (Art. 18)</strong>, <strong>Datenübertragbarkeit
+      (Art. 20)</strong> – hier durch deine selbst-souveränen Schlüssel und die lokale
+      Datenhaltung konzeptionell gut erfüllbar – sowie <strong>Widerspruch (Art. 21)</strong>
+      gegen Verarbeitungen auf Grundlage berechtigter Interessen. Soweit eine Verarbeitung auf
+      <strong>Einwilligung</strong> beruht (z. B. eingebettete Videos), kannst du diese
+      jederzeit mit Wirkung für die Zukunft widerrufen, indem du das Video nicht abspielst.
+    </p>
+    <p>
+      Zur Ausübung genügt eine Nachricht an
+      <strong><a href="mailto:phillipprochel@icloud.com">phillipprochel@icloud.com</a></strong>.
       Du hast außerdem das Recht, dich bei einer <strong>Datenschutz-Aufsichtsbehörde</strong>
-      zu beschweren.
+      zu beschweren (zuständig u. a. die Aufsichtsbehörde deines Wohnsitzlandes bzw. die für
+      RocDev Solutions zuständige Behörde in Niedersachsen).
     </p>
 
-    <h2>10. Minderjährige</h2>
+    <h2>11. Pseudonym ist nicht anonym</h2>
     <p>
-      Die App richtet sich an Personen ab <strong>17 Jahren</strong> und nicht an Kinder.
-      In der Beta werden gezielt nur volljährige bzw. mindestens 16-jährige Tester eingeladen.
+      Auch ohne Klarnamen bist du <strong>nicht anonym</strong>: Dein öffentlicher Schlüssel
+      ist ein dauerhaftes, verkettbares Pseudonym; deine IP-Adresse ist den Relais gegenüber
+      sichtbar; aus deinen öffentlichen Aktivitäten kann ein Profil/Beziehungsgraph entstehen.
+      Wir behaupten ausdrücklich <strong>kein „100 % anonym" und keine Unverfolgbarkeit</strong>.
+    </p>
+
+    <h2>12. Minderjährige</h2>
+    <p>
+      Nodo richtet sich an Personen ab <strong>17 Jahren</strong> und <strong>nicht an
+      Kinder</strong>. Beim Start ist ein Altersnachweis (Altersgate, mindestens 16 Jahre
+      gemäß Art. 8 DSGVO) zu bestätigen. Wir richten den Dienst nicht an Kinder und verarbeiten
+      nicht wissentlich Daten von Kindern.
+    </p>
+
+    <h2>13. Änderungen dieser Erklärung</h2>
+    <p>
+      Wir passen diese Erklärung an, wenn sich die Verarbeitung ändert. Maßgeblich ist die
+      jeweils auf dieser Seite veröffentlichte Fassung (Stand oben).
     </p>
 
     <p class="small">
-      Diese Datenschutzerklärung ist ein Beta-Stand und wird vor einem öffentlichen Launch
-      anwaltlich finalisiert.
+      Stand: 9. Juni 2026. Diese Datenschutzerklärung ist eine Vorab-Fassung und wird vor einem
+      vollständig offenen Launch fachanwaltlich finalisiert. Keine verbindliche Rechtsberatung.
     </p>
   </main>
 
@@ -220,11 +387,12 @@
           <li><a href="../">Start</a></li>
           <li><a href="../privacy/">Datenschutz</a></li>
           <li><a href="../terms/">Nutzungsbedingungen</a></li>
+          <li><a href="../dsa/">Plattform-Regeln (DSA)</a></li>
           <li><a href="../support/">Support</a></li>
           <li><a href="../account-deletion/">Konto löschen</a></li>
         </ul>
       </nav>
-      <p>social-p2p · Closed Beta · Beta-Eckpunkte, keine Rechtsberatung.</p>
+      <p>social-p2p · Nodo · Vorabversion · keine Rechtsberatung.</p>
     </div>
   </footer>
 </body>

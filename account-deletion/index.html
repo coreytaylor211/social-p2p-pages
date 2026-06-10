@@ -43,9 +43,17 @@
     <ul class="feat">
       <li>Dein <strong>privater Schlüssel und deine lokalen Daten</strong> werden vom Gerät
         gelöscht – sofort und vollständig.</li>
-      <li>Für deine eigenen Beiträge werden <strong>Lösch-Marker (Tombstones)</strong> ins
-        Netz gesendet, und die zugehörigen Schlüssel werden vergessen, sodass die Inhalte
-        <strong>unlesbar</strong> werden.</li>
+      <li><strong>Private (Ende-zu-Ende-verschlüsselte) Beiträge des Follower-Feeds:</strong>
+        Es werden <strong>Lösch-Marker (Tombstones)</strong> ins Netz gesendet, und die
+        zugehörigen Schlüssel werden vergessen. Dadurch wird das auf den Relais-Servern
+        zwischengespeicherte <strong>Chiffrat unlesbar</strong> – auch in den
+        Store-and-Forward-Replikaten.</li>
+      <li><strong>Öffentliche Profile, Promos und Kommentare:</strong> Wenn du dein
+        Profil/Projekt löschst, wird es vom Gerät entfernt und ein <strong>signierter
+        Lösch-Vermerk (Tombstone)</strong> im Netz verteilt, sodass andere Geräte es
+        ausblenden. <strong>Der Verteil-Server (Relais) entfernt daraufhin seine
+        zwischengespeicherte Kopie</strong> – er löscht die betroffenen Profil-/Promo-Bytes
+        bei Erhalt des signierten Lösch-Vermerks aktiv und liefert sie nicht erneut aus.</li>
     </ul>
 
     <h2>Die ehrliche Grenze</h2>
@@ -53,15 +61,32 @@
       <strong>Wichtig:</strong> Was lokal auf deinem Gerät liegt, ist nach dem Löschen weg.
       Aber: <strong>Bereits an andere Teilnehmer verteilte oder von ihnen entschlüsselte
       Kopien können technisch nicht zurückgeholt werden.</strong> Gelöschte Inhalte werden
-      durch das Vergessen des Schlüssels unlesbar gemacht – das ist die stärkste Maßnahme,
-      die eine dezentrale Architektur ohne zentralen Inhalts-Server bieten kann.
+      durch das Vergessen des Schlüssels unlesbar gemacht, und die von uns kontrollierte
+      Relais-Kopie wird aktiv entfernt – das ist die stärkste Maßnahme, die eine dezentrale
+      Architektur bieten kann. Insbesondere bereits kopierte oder zwischengespeicherte
+      <strong>öffentliche Profildaten</strong> (Kanalname, Profilbild) lassen sich über das
+      von uns Kontrollierte hinaus nicht garantiert überall zurückholen.
     </div>
 
-    <h2>Verbindungs-Metadaten bei den Relais</h2>
+    <h2>Was die Relais-Server speichern</h2>
     <p>
-      Die Relais-Server verarbeiten nur kurzlebige Verbindungs-Metadaten (IP, PeerId,
-      Verbindungszeitpunkte) mit minimaler Aufbewahrung. Möchtest du hierzu Auskunft oder
-      Löschung, wende dich an unsere <a href="../support/">Kontaktstelle</a>. Details in der
+      Damit Beiträge auch bei Autor- oder Empfänger-offline ankommen, sind die
+      Relais-Server keine reinen Durchleitungs-Server: Sie <strong>speichern und
+      replizieren</strong> Inhalte (Store-and-Forward). Konkret liegen dort
+      <strong>Ende-zu-Ende-verschlüsselte Beiträge des Follower-Feeds als Chiffrat</strong>
+      (für uns nicht lesbar) sowie <strong>öffentliche Hauptkanal-Objekte</strong> (Profile,
+      Promos, öffentliche Bilder, Moderations-/Blocklisten). Zusätzlich verarbeiten die
+      Relais <strong>Verbindungs-Metadaten</strong> (IP-Adresse, PeerId,
+      Verbindungszeitpunkte), um Geräte hinter Routern erreichbar zu machen und Missbrauch
+      abzuwehren.
+    </p>
+    <p>
+      Bei einer Löschung greift der oben beschriebene Mechanismus: Das Chiffrat des privaten
+      Feeds wird durch Vergessen des Schlüssels unlesbar, und die zwischengespeicherte Kopie
+      deiner öffentlichen Profile/Promos wird vom Relais bei Erhalt des signierten
+      Lösch-Vermerks aktiv entfernt. Möchtest du darüber hinaus Auskunft oder Löschung von
+      Daten, die nur wir kontrollieren, wende dich an unsere
+      <a href="../support/">Kontaktstelle</a>. Details in der
       <a href="../privacy/">Datenschutzerklärung</a>.
     </p>
 
@@ -72,7 +97,8 @@
     </p>
 
     <p class="small">
-      Diese Seite ist ein Beta-Stand. Die genauen Menüpfade können sich in der App ändern.
+      Stand: 10. Juni 2026. Diese Seite ist ein Vorab-Stand; die genauen Menüpfade können
+      sich in der App ändern. Keine verbindliche Rechtsberatung.
     </p>
   </main>
 

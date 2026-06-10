@@ -26,7 +26,7 @@
   </header>
 
   <main id="main">
-    <span class="badge">Stand: 9. Juni 2026 · Vorabversion</span>
+    <span class="badge">Stand: 10. Juni 2026 · Vorabversion</span>
     <h1>Datenschutzerklärung — Nodo</h1>
     <p class="muted">
       Diese Erklärung beschreibt, welche personenbezogenen Daten bei der Nutzung von
@@ -308,10 +308,11 @@
       <li><strong>Öffentliche Profile, Promos und Kommentare:</strong> Wenn du dein
         Profil/Projekt löschst, wird es <strong>von deinem Gerät entfernt</strong> und ein
         <strong>signierter Lösch-Vermerk (Tombstone)</strong> im Netz verteilt, sodass andere
-        Geräte es ausblenden. Die <strong>vollständige Löschung der zwischengespeicherten Kopie
-        auf dem Verteil-Server (Relais) ist in Vorbereitung</strong>. Bereits an andere
-        Teilnehmer weiterverteilte Kopien können in einem dezentralen Netz nicht garantiert
-        sofort überall verschwinden.</li>
+        Geräte es ausblenden. <strong>Der Verteil-Server (Relais) entfernt daraufhin seine
+        zwischengespeicherte Kopie</strong> – er löscht die betroffenen Profil-/Promo-Bytes bei
+        Erhalt des signierten Lösch-Vermerks aktiv und liefert sie nicht erneut aus. Bereits an
+        andere Teilnehmer weiterverteilte Kopien können in einem dezentralen Netz jedoch nicht
+        garantiert sofort überall verschwinden.</li>
     </ul>
     <div class="note">
       <strong>Wichtig und ehrlich:</strong> Ein <strong>hartes, weltweites Löschen ist
@@ -321,7 +322,8 @@
       zurückholen</strong>. Insbesondere <strong>öffentliche Profildaten (Kanalname,
       Profilbild)</strong> wurden möglicherweise schon kopiert/zwischengespeichert. Wir
       ergreifen alle uns verfügbaren, zumutbaren technischen Mittel (Tombstone,
-      Schlüssel-Vergessen, Blockliste; die aktive Tilgung der Relais-Kopie ist in Vorbereitung)
+      Schlüssel-Vergessen, Blockliste sowie die aktive Tilgung der zwischengespeicherten
+      Relais-Kopie bei Erhalt des signierten Lösch-Vermerks)
       – eine vollständige Garantie über das von uns Kontrollierte hinaus gibt es in einer
       dezentralen Architektur jedoch nicht. Diese Offenheit ist selbst Teil unserer
       Transparenzpflicht (Art. 13 DSGVO).
@@ -375,7 +377,7 @@
     </p>
 
     <p class="small">
-      Stand: 9. Juni 2026. Diese Datenschutzerklärung ist eine Vorab-Fassung und wird vor einem
+      Stand: 10. Juni 2026. Diese Datenschutzerklärung ist eine Vorab-Fassung und wird vor einem
       vollständig offenen Launch fachanwaltlich finalisiert. Keine verbindliche Rechtsberatung.
     </p>
   </main>

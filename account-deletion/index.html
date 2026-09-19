@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Konto &amp; Daten löschen — social-p2p (Beta)</title>
-  <meta name="description" content="So löschst du deine Identität und Daten in social-p2p – Schritt für Schritt in der App – inklusive der ehrlichen Grenzen einer dezentralen Architektur.">
+  <title>Konto &amp; Daten löschen — Nodo (Beta)</title>
+  <meta name="description" content="So löschst du dein Nodo-Konto endgültig – oder entfernst es nur von einem Gerät. Schritt für Schritt in der App, inklusive der ehrlichen Grenzen.">
   <meta name="robots" content="noindex">
   <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -12,7 +12,7 @@
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
   <header class="site">
     <div class="wrap">
-      <a class="brand" href="../">social<span>-p2p</span></a>
+      <a class="brand" href="../">No<span>do</span></a>
       <nav class="site" aria-label="Hauptnavigation">
         <ul>
           <li><a href="../privacy/">Datenschutz</a></li>
@@ -29,43 +29,68 @@
     <span class="badge">Closed Beta</span>
     <h1>Konto &amp; Daten löschen</h1>
     <p class="muted">
-      social-p2p hat kein klassisches Konto bei uns – deine Identität ist ein Schlüssel auf
-      deinem Gerät. So entfernst du sie und deine Daten.
+      Nodo hat kein klassisches Konto bei uns – dein Konto ist ein Schlüssel auf deinem
+      Gerät. In der App gibt es deshalb zwei Wege, je nachdem, was du vorhast: das Konto
+      <strong>endgültig löschen</strong> oder nur <strong>dieses Gerät aufräumen</strong>.
     </p>
 
-    <h2>In der App löschen</h2>
+    <h2>Konto endgültig löschen</h2>
     <ol>
-      <li>Öffne die App und gehe zu <strong>Einstellungen</strong>.</li>
-      <li>Wähle <strong>„Identität &amp; Daten löschen"</strong>.</li>
-      <li>Lies den angezeigten Hinweis zu den Grenzen (siehe unten) und bestätige.</li>
+      <li>Öffne die App und gehe zu <strong>Einstellungen → Konto &amp; Daten</strong>.</li>
+      <li>Wähle <strong>„Konto endgültig löschen"</strong> und lies, was passiert.</li>
+      <li>Tippe zur Bestätigung <strong>LÖSCHEN</strong> und bestätige. Du brauchst dafür
+        eine Internetverbindung.</li>
     </ol>
     <p>Dabei passiert Folgendes:</p>
     <ul class="feat">
-      <li>Dein <strong>privater Schlüssel und deine lokalen Daten</strong> werden vom Gerät
-        gelöscht – sofort und vollständig.</li>
-      <li><strong>Private (Ende-zu-Ende-verschlüsselte) Beiträge des Follower-Feeds:</strong>
-        Es werden <strong>Lösch-Marker (Tombstones)</strong> ins Netz gesendet, und die
-        zugehörigen Schlüssel werden vergessen. Dadurch wird das auf den Relais-Servern
-        zwischengespeicherte <strong>Chiffrat unlesbar</strong> – auch in den
-        Store-and-Forward-Replikaten.</li>
-      <li><strong>Öffentliche Profile, Promos und Kommentare:</strong> Wenn du dein
-        Profil/Projekt löschst, wird es vom Gerät entfernt und ein <strong>signierter
-        Lösch-Vermerk (Tombstone)</strong> im Netz verteilt, sodass andere Geräte es
-        ausblenden. <strong>Der Verteil-Server (Relais) entfernt daraufhin seine
-        zwischengespeicherte Kopie</strong> – er löscht die betroffenen Profil-/Promo-Bytes
-        bei Erhalt des signierten Lösch-Vermerks aktiv und liefert sie nicht erneut aus.</li>
+      <li>Deine App schickt ein <strong>von deinem Konto selbst signiertes Lösch-Signal</strong>
+        an unseren Verteil-Server (Relais). Nur wer den Schlüssel des Kontos besitzt, kann
+        dieses Signal erzeugen – niemand kann ein fremdes Konto löschen.</li>
+      <li>Das Relais <strong>löscht daraufhin alles, was dein Konto verfasst hat</strong>:
+        Kanal und Profil samt Profilbildern, Projekte, die (verschlüsselten) Beiträge samt
+        ihrer Schlüssel-Umschläge und Bild-Dateien, Kommentare, Likes und Folge-Angaben.
+        Es nimmt von diesem Konto nichts mehr an und liefert nichts mehr aus.</li>
+      <li>Die Apps deiner Follower <strong>blenden deinen Kanal aus</strong>, entfernen ihre
+        Kopien und beenden das Folgen – auch bei Followern, die gerade offline sind, sobald
+        ihre App das nächste Mal nachfragt.</li>
+      <li>Erst wenn das Relais das Löschen <strong>bestätigt</strong> hat, wird dein Gerät
+        zurückgesetzt (Schlüssel, lokale Daten, Einstellungen) und bei unserem
+        Benachrichtigungs-Dienst abgemeldet. Bleibt die Bestätigung aus, ändert sich auf
+        deinem Gerät nichts und du kannst es erneut versuchen.</li>
     </ul>
+
+    <div class="note">
+      <strong>Endgültig heißt endgültig – mit Absicht.</strong> Das Löschen gilt sofort und
+      lässt sich von niemandem rückgängig machen – nicht von uns und auch nicht mit deinen
+      24 Wiederherstellungswörtern. Das ist ein Schutz für dich: Wer deine Wörter später
+      findet oder stiehlt, kann mit einem gelöschten Konto nichts mehr anfangen – weder in
+      deinem Namen posten noch deine alten Beiträge zurückholen.
+    </div>
+
+    <h2>Nur dieses Gerät aufräumen</h2>
+    <p>
+      Du verkaufst dein Handy oder wechselst das Gerät und willst dein Konto behalten? Dann
+      wähle unter <strong>Einstellungen → Konto &amp; Daten</strong> den Eintrag
+      <strong>„Konto von diesem Gerät entfernen"</strong>. Dabei werden dein Schlüssel,
+      deine Beiträge und deine Einstellungen <strong>nur auf diesem Gerät</strong> gelöscht.
+      Dein Konto selbst bleibt bestehen: Deine Follower sehen deine bisherigen Beiträge
+      weiter, und mit deinen <strong>24 Wiederherstellungswörtern</strong> holst du es auf
+      jedem Gerät zurück.
+    </p>
+    <p>
+      Hast du deine Wörter nicht gesichert, kommst du danach nie wieder an dieses Konto – es
+      bliebe verwaist im Netz stehen. Sichere in dem Fall zuerst deine Wörter, oder lösche
+      das Konto endgültig.
+    </p>
 
     <h2>Die ehrliche Grenze</h2>
     <div class="note">
-      <strong>Wichtig:</strong> Was lokal auf deinem Gerät liegt, ist nach dem Löschen weg.
-      Aber: <strong>Bereits an andere Teilnehmer verteilte oder von ihnen entschlüsselte
-      Kopien können technisch nicht zurückgeholt werden.</strong> Gelöschte Inhalte werden
-      durch das Vergessen des Schlüssels unlesbar gemacht, und die von uns kontrollierte
-      Relais-Kopie wird aktiv entfernt – das ist die stärkste Maßnahme, die eine dezentrale
-      Architektur bieten kann. Insbesondere bereits kopierte oder zwischengespeicherte
-      <strong>öffentliche Profildaten</strong> (Kanalname, Profilbild) lassen sich über das
-      von uns Kontrollierte hinaus nicht garantiert überall zurückholen.
+      <strong>Wichtig:</strong> Was wir kontrollieren – das Relais –, wird aktiv gelöscht, und
+      ehrliche Apps entfernen ihre Kopien. <strong>Kopien, die andere schon außerhalb von
+      Nodo gespeichert haben (zum Beispiel Screenshots), erreichen wir nicht.</strong> Geräte
+      von Followern, die nie wieder online gehen, behalten ihre Kopie. Einzelne Teile großer
+      Bilder kann das Relais keinem Konto zuordnen (sie sind verschlüsselt und ohne die
+      gelöschten Beiträge wertlos); sie fallen nach kurzer Zeit von selbst aus dem Speicher.
     </div>
 
     <h2>Was die Relais-Server speichern</h2>
@@ -75,30 +100,34 @@
       replizieren</strong> Inhalte (Store-and-Forward). Konkret liegen dort
       <strong>Ende-zu-Ende-verschlüsselte Beiträge des Follower-Feeds als Chiffrat</strong>
       (für uns nicht lesbar) sowie <strong>öffentliche Hauptkanal-Objekte</strong> (Profile,
-      Promos, öffentliche Bilder, Moderations-/Blocklisten). Zusätzlich verarbeiten die
+      Projekte, öffentliche Bilder, Kommentare, Likes). Zusätzlich verarbeiten die
       Relais <strong>Verbindungs-Metadaten</strong> (IP-Adresse, PeerId,
       Verbindungszeitpunkte), um Geräte hinter Routern erreichbar zu machen und Missbrauch
       abzuwehren.
     </p>
     <p>
-      Bei einer Löschung greift der oben beschriebene Mechanismus: Das Chiffrat des privaten
-      Feeds wird durch Vergessen des Schlüssels unlesbar, und die zwischengespeicherte Kopie
-      deiner öffentlichen Profile/Promos wird vom Relais bei Erhalt des signierten
-      Lösch-Vermerks aktiv entfernt. Möchtest du darüber hinaus Auskunft oder Löschung von
+      Beim endgültigen Löschen bleibt auf dem Relais von deinem Konto nur der
+      <strong>Lösch-Vermerk selbst</strong> zurück (dein öffentlicher Konto-Schlüssel und der
+      Zeitpunkt) – er ist nötig, damit das Relais von diesem Konto dauerhaft nichts mehr
+      annimmt. Aus demselben Grund merken sich auch die Apps deiner bisherigen Follower diesen
+      Vermerk (Konto-Schlüssel und Zeitpunkt), nicht aber deine Inhalte. Unser Kauf-Prüfdienst behält Transaktionskennungen früherer Käufe
+      (Betrugsschutz, keine Inhalte). Möchtest du darüber hinaus Auskunft oder Löschung von
       Daten, die nur wir kontrollieren, wende dich an unsere
       <a href="../support/">Kontaktstelle</a>. Details in der
       <a href="../privacy/">Datenschutzerklärung</a>.
     </p>
 
-    <h2>Schlüssel-Verlust = endgültig</h2>
+    <h2>Gerät verloren?</h2>
     <p>
-      Da es kein Konto-Backup bei uns gibt, kannst du eine gelöschte oder verlorene Identität
-      <strong>nicht wiederherstellen</strong>. Wenn du sicher bist, ist das Löschen final.
+      Mit deinen <strong>24 Wiederherstellungswörtern</strong> stellst du dein Konto auf einem
+      neuen Gerät wieder her – und kannst es dort, wenn du möchtest, endgültig löschen. Ohne
+      Gerät <strong>und</strong> ohne Wörter hat niemand mehr den Schlüssel zu diesem Konto –
+      auch wir nicht. Bei uns gibt es keine Kopie deines Schlüssels oder deiner Wörter.
     </p>
 
     <p class="small">
-      Stand: 10. Juni 2026. Diese Seite ist ein Vorab-Stand; die genauen Menüpfade können
-      sich in der App ändern. Keine verbindliche Rechtsberatung.
+      Stand: 19. September 2026. Diese Seite beschreibt die App ab Version 1.0; die genauen
+      Menüpfade können sich ändern. Keine verbindliche Rechtsberatung.
     </p>
   </main>
 
@@ -114,7 +143,7 @@
           <li><a href="../account-deletion/">Konto löschen</a></li>
         </ul>
       </nav>
-      <p>social-p2p · Closed Beta · Beta-Eckpunkte, keine Rechtsberatung.</p>
+      <p>Nodo · Closed Beta · Beta-Eckpunkte, keine Rechtsberatung.</p>
     </div>
   </footer>
 </body>

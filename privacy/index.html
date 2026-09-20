@@ -26,7 +26,7 @@
   </header>
 
   <main id="main">
-    <span class="badge">Stand: 19. September 2026 · Vorabversion</span>
+    <span class="badge">Stand: 20. September 2026 · Vorabversion</span>
     <h1>Datenschutzerklärung — Nodo</h1>
     <p class="muted">
       Diese Erklärung beschreibt, welche personenbezogenen Daten bei der Nutzung von
@@ -80,7 +80,7 @@
       <li><strong>B) Der private Follower-Feed (das „Heiligtum").</strong> Inhalte, die du
         an deine Follower postest, werden <strong>Ende-zu-Ende-verschlüsselt</strong>
         zugestellt. Wir als Betreiber <strong>können diese Inhalte nicht lesen</strong> –
-        auch dann nicht, wenn sie über unsere Relais-Server laufen (dazu Abschnitt 5).</li>
+        auch dann nicht, wenn sie über unsere Relais-Server laufen (dazu Abschnitt 6).</li>
     </ul>
     <p>
       Es gibt <strong>kein Nutzerkonto</strong> und <strong>keinen Login</strong> bei uns.
@@ -103,7 +103,7 @@
     <p>
       Weiter auf deinem Gerät gespeichert: deine Liste der Gefolgten, lokale Spitznamen,
       deine eigenen Beiträge und Schlüssel. Diese lokalen Daten kontrollierst du selbst und
-      kannst sie über die Löschfunktion der App entfernen (siehe Abschnitt 9 und
+      kannst sie über die Löschfunktion der App entfernen (siehe Abschnitt 10 und
       <a href="../account-deletion/">Konto &amp; Daten löschen</a>).
     </p>
     <p>
@@ -112,12 +112,94 @@
       funktionierenden, sicheren App (Art. 6 Abs. 1 lit. f DSGVO).
     </p>
 
-    <h2>4. Öffentlicher Hauptkanal: Profile, Promos, Projekte, Engagement (öffentliches PII)</h2>
+    <h2>4. Geräte-Prüfung beim Anlegen eines neuen Kontos</h2>
+    <p>
+      Wenn du in der App ein <strong>neues Konto</strong> anlegst, prüfen wir kurz mit Apple,
+      dass auf diesem iPhone nicht schon zu viele neue Konten entstanden sind. Zweck: höchstens
+      <strong>zwei neue Konten je Gerät in zwölf Monaten</strong> zulassen, damit niemand
+      beliebig viele Wegwerf-Konten anlegen kann – das schützt vor massenhaft erzeugten Konten
+      und stützt den automatischen Melde-Weg (Abschnitt 9).
+    </p>
+    <p>
+      <strong>Ablauf:</strong> Die App holt sich dafür von Apple einen kurzlebigen,
+      einmaligen Geräte-Schein (Apples Dienst <strong>DeviceCheck</strong>). Unser
+      Zulassungs-Dienst zeigt diesen Schein Apple und fragt damit zwei winzige Zähl-Bits sowie
+      den Monat der letzten Änderung ab – und erhöht sie, wenn ein Konto zugelassen wird.
+      <strong>Apple führt diesen Zähler je Gerät und je Entwickler-Konto</strong>, nicht je
+      App. <strong>Wir erfahren dabei keine Kennung deines Geräts</strong> – nur, wie oft auf
+      diesem Gerät in den letzten 12 Monaten schon ein neues Konto angelegt wurde. Diese
+      Angabe speichern wir nicht. Der Geräte-Schein selbst geht nur an unseren Dienst und von
+      dort an Apple – wir speichern ihn nicht, auch nicht gekürzt oder in Logs.
+    </p>
+    <p><strong>Was dabei gespeichert wird:</strong></p>
+    <ul class="feat">
+      <li><strong>Unser Zulassungs-Dienst</strong> speichert je Konto: deinen öffentlichen
+        Schlüssel, die ausgestellte Zulassung (sie enthält denselben Schlüssel, einen
+        Zeitpunkt und eine Signatur) sowie ihren Status.</li>
+      <li><strong>Unser Relais</strong> speichert je zugelassenem Konto: deinen öffentlichen
+        Schlüssel, den Zeitpunkt der ersten Zulassung und ihre Herkunft (neu geprüft oder als
+        Bestandskonto übernommen).</li>
+      <li><strong>Dein Gerät</strong> speichert nur deine eigene Zulassung, im selben
+        geschützten App-Speicher wie deine übrigen lokalen Daten.</li>
+    </ul>
+    <p>
+      <strong>Empfänger:</strong> Für die Abfrage übermitteln wir den Geräte-Schein an
+      <strong>Apple Distribution International Ltd. / Apple Inc.</strong>, die den Dienst
+      „DeviceCheck" in eigener Verantwortung betreiben; das findet in die <strong>USA</strong>
+      statt. Es gilt dieselbe Drittland-Grundlage wie in Abschnitt 6 beschrieben
+      (Standardvertragsklauseln der EU-Kommission). Es gelten die Datenschutzbestimmungen von
+      Apple:
+      <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">apple.com/legal/privacy</a>.
+    </p>
+    <p>
+      <strong>Rechtsgrundlage:</strong> Wir fragen dich vor der Prüfung ausdrücklich um deine <strong>Einwilligung</strong>
+      (§ 25 Abs. 1 TDDDG, Art. 6 Abs. 1 lit. a DSGVO). <strong>Ohne Einwilligung legen wir kein
+      neues Konto an</strong>; ein bestehendes Konto kannst du ohne Prüfung mit deinen 24 Wörtern
+      zurückholen. Hilfsweise stützen wir die Prüfung darauf, dass sie für ein vor Missbrauch
+      geschütztes Konto unbedingt erforderlich ist (§ 25 Abs. 2 Nr. 2 TDDDG), sowie auf unser
+      berechtigtes Interesse am Schutz vor massenhaft angelegten Konten (Art. 6 Abs. 1 lit. f
+      DSGVO). Die Einwilligung kannst du jederzeit mit Wirkung für die Zukunft widerrufen; da die
+      Prüfung ein einmaliger Vorgang ist, betrifft ein Widerruf keine bereits abgeschlossene
+      Prüfung. Die ausgestellte Zulassung wirst du los, indem du dein Konto endgültig löschst.
+    </p>
+    <p>
+      <strong>Speicherdauer:</strong> Eine erteilte Zulassung gilt unbefristet, solange das
+      Konto besteht. Löschst du dein Konto endgültig, entfernt unser Relais deine Zulassung
+      sofort – ein endgültig gelöschtes Konto wird nie wieder zugelassen. Unser Zulassungs-Dienst
+      selbst entfernt seinen eigenen Eintrag (öffentlicher Schlüssel + ausgestellte Zulassung),
+      <strong>sobald deine App ihn nach der Löschung erreicht</strong>: die App schickt dafür
+      dasselbe, bereits vorhandene und signierte Lösch-Signal, das sie ohnehin an unser Relais
+      schickt, zusätzlich an den Zulassungs-Dienst – best-effort und automatisch, ohne dass du
+      etwas dafür tun musst. War der Dienst im Moment der Löschung gerade nicht erreichbar,
+      wiederholt die App den Versand automatisch bei jedem weiteren App-Start, bis er
+      angekommen ist; das Löschen deines Kontos selbst hängt davon zu keinem Zeitpunkt ab und
+      wird davon nie verzögert. Bis diese Zustellung gelingt, wird der Eintrag für nichts
+      anderes als die Wiederholungs-Prüfung genutzt – nicht für Werbung, nicht für
+      Profilbildung.
+    </p>
+    <p>
+      <strong>Wichtig und ehrlich:</strong> Die zwei Zähl-Bits bei Apple bleiben bestehen, auch
+      wenn du die App löschst oder das iPhone zurücksetzt – sie hängen am Gerät, nicht an der
+      App. Das Wiederherstellen eines bestehenden Kontos mit deinen
+      <strong>24 Wiederherstellungswörtern</strong> verbraucht dabei nie einen der beiden
+      Plätze. Wir bilden aus der Geräte-Prüfung <strong>kein Profil</strong> und nutzen sie
+      <strong>nicht für Werbung</strong> – sie dient ausschließlich dazu, das massenhafte
+      Anlegen neuer Konten zu bremsen.
+    </p>
+    <p>
+      Die Prüfung braucht kurz eine Internetverbindung. Klappt sie gerade nicht, wird nichts
+      verbraucht; du kannst es später erneut versuchen. Hältst du eine Ablehnung für falsch,
+      schreib an unsere
+      <strong><a href="mailto:phillipprochel@icloud.com">Kontaktadresse</a></strong> – dort
+      antwortet ein Mensch.
+    </p>
+
+    <h2>5. Öffentlicher Hauptkanal: Profile, Promos, Projekte, Engagement (öffentliches PII)</h2>
     <p>
       Wenn du als Creator am Hauptkanal teilnimmst, werden folgende Daten
       <strong>öffentlich</strong> sichtbar gemacht, signiert mit deinem Schlüssel,
       <strong>dezentral an andere Teilnehmer verbreitet und zusätzlich auf unseren
-      Relais-Servern als Replikat gespeichert</strong> (Store-and-Forward, siehe Abschnitt 5):
+      Relais-Servern als Replikat gespeichert</strong> (Store-and-Forward, siehe Abschnitt 6):
     </p>
     <ul class="feat">
       <li><strong>Öffentliches Kanal-Profil:</strong> Kanalname, <strong>Pflicht-Profilbild
@@ -137,7 +219,7 @@
       – das ist der Zweck eines Schaufensters, in dem dich neue Follower finden sollen. Sie
       sind <strong>nicht</strong> privat und <strong>nicht</strong> verschlüsselt. Bedenke,
       dass öffentliche Inhalte von Dritten kopiert oder zwischengespeichert werden können; ein
-      vollständiges, weltweites Zurückholen ist technisch nicht garantierbar (Abschnitt 9).
+      vollständiges, weltweites Zurückholen ist technisch nicht garantierbar (Abschnitt 10).
     </div>
     <p>
       <strong>Engagement-Aggregator:</strong> Zur Anzeige öffentlicher Zähler (z. B.
@@ -154,7 +236,7 @@
       hiervon nicht betroffen und bleibt Ende-zu-Ende-verschlüsselt.
     </p>
 
-    <h2>5. Relais-Server (Railway, USA): Verbindung + Speicherung von Inhalten</h2>
+    <h2>6. Relais-Server (Railway, USA): Verbindung + Speicherung von Inhalten</h2>
     <p>
       Damit deine Beiträge auch dann ankommen, wenn du oder dein Empfänger gerade offline
       ist, betreiben wir <strong>Relais-Server</strong>. Diese erfüllen zwei Funktionen – und
@@ -195,7 +277,7 @@
       vorgehalten, wie es technisch zur Verteilung erforderlich ist; ein festes zeitliches
       Limit besteht derzeit nicht</strong>. Öffentliche Profile und Promos bleiben
       gespeichert <strong>bis zu ihrer Tilgung</strong> (Löschung/Tombstone/Widerruf durch
-      dich oder den Betreiber, siehe Abschnitt 9). Dauerhafte Verbindungs-Logs werden nicht zu
+      dich oder den Betreiber, siehe Abschnitt 10). Dauerhafte Verbindungs-Logs werden nicht zu
       Werbe-/Profilzwecken geführt.
     </p>
     <p>
@@ -224,7 +306,7 @@
       (Art. 6 Abs. 1 lit. f DSGVO); Drittland-Transfer gestützt auf Standardvertragsklauseln.</em>
     </p>
 
-    <h2>6. Eingebettete externe Videos (YouTube / Vimeo)</h2>
+    <h2>7. Eingebettete externe Videos (YouTube / Vimeo)</h2>
     <p>
       Beiträge können <strong>eingebettete Videos</strong> von YouTube oder Vimeo enthalten.
       Diese Videos liegen <strong>nicht</strong> bei uns, sondern bei den jeweiligen Anbietern.
@@ -256,7 +338,7 @@
       (<a href="https://vimeo.com/privacy" rel="noopener noreferrer">vimeo.com/privacy</a>).
     </p>
 
-    <h2>7. Bezahlter Boost (Apple In-App-Kauf)</h2>
+    <h2>8. Bezahlter Boost (Apple In-App-Kauf)</h2>
     <p>
       Wenn du eine Promo kostenpflichtig <strong>boostest</strong>, läuft die Zahlung
       <strong>ausschließlich über Apple (In-App-Kauf)</strong>. <strong>Apple ist
@@ -274,12 +356,12 @@
     </p>
     <p>
       <strong>Rechtsgrundlage:</strong> Erfüllung des Boost-Kaufvertrags (Art. 6 Abs. 1 lit. b
-      DSGVO). Drittland-Transfer USA wie in Abschnitt 5 (Standardvertragsklauseln). Apple als
+      DSGVO). Drittland-Transfer USA wie in Abschnitt 6 (Standardvertragsklauseln). Apple als
       eigenständiger Akteur:
       <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">apple.com/legal/privacy</a>.
     </p>
 
-    <h2>8. Moderation, Meldungen und Blocklisten (Gemeinschafts-Riegel)</h2>
+    <h2>9. Moderation, Meldungen und Blocklisten (Gemeinschafts-Riegel)</h2>
     <p>
       Für den automatisierten „Gemeinschafts-Riegel" (Einzelheiten zum Melde- und
       Beschwerdeverfahren: <a href="../dsa/">Plattform-Regeln &amp; Meldungen (DSA)</a>)
@@ -300,13 +382,22 @@
     <p>
       Diese Daten dienen ausschließlich der automatisierten Zählung nach der in den
       Plattform-Regeln beschriebenen Regel; wir nutzen sie nicht für Werbung oder
-      Profilbildung und veröffentlichen sie nicht gesondert. Ein aus diesen Daten gebildeter,
-      <strong>signierter Sperr-Hinweis</strong> (betroffene Inhalts-Kennung, Urheber-Schlüssel,
-      meistgenannter Grund, Frist) ist technisch von <strong>jeder</strong> App abrufbar, die
-      unser Relais anfragt – das ist notwendig, damit jede offizielle App eine Sperre erkennen
-      kann. Die <strong>Identität der einzelnen Melder</strong> wird darin nie offengelegt; wir
-      arbeiten daran, künftig auch den meistgenannten Grund nur noch an den betroffenen
-      Urheber statt an alle abrufbaren Apps auszuliefern. Auf deinem Gerät speichert die App
+      Profilbildung und veröffentlichen sie nicht gesondert. Aus diesen Daten bildet unser
+      Relais einen <strong>signierten Sperr-Hinweis</strong>. Für <strong>jede</strong> App, die
+      unser Relais anfragt, abrufbar sind nur die Inhalts-Kennung, der Urheber-Schlüssel, der
+      Sperr-Zustand und die Frist – das ist notwendig, damit jede offizielle App eine Sperre
+      erkennen kann. Den <strong>meistgenannten Grund</strong> geben wir dagegen ausschließlich
+      dem <strong>betroffenen Urheber selbst</strong> heraus, über eine eigens von ihm
+      signierte Abfrage (Nachweis: nur wer den zugehörigen Schlüssel besitzt, bekommt den
+      Grund zu seinen eigenen Inhalten zu sehen). Hast du <strong>eigene öffentliche
+      Inhalte</strong> (ein Kanal-Profil oder mindestens ein veröffentlichtes Projekt), fragt
+      deine App unser Relais deshalb <strong>regelmäßig</strong> mit einer von deinem Konto
+      unterschriebenen Anfrage, ob es Hinweise zu <strong>deinen</strong> Inhalten gibt –
+      liest du nur mit, ohne eigene Inhalte, stellt deine App diese Anfrage nie. Diese Anfrage
+      selbst <strong>speichern wir nicht</strong>; wir merken uns lediglich kurzzeitig (bis zu
+      elf Minuten) eine darin enthaltene Zufallszahl, um eine mitgeschnittene Wiederholung
+      derselben Anfrage zu erkennen und abzuweisen. Die <strong>Identität der einzelnen
+      Melder</strong> wird nie offengelegt, an niemanden. Auf deinem Gerät speichert die App
       die für dich abgeholten Sperr-Hinweise lokal.
     </p>
     <p>
@@ -317,20 +408,24 @@
     <p>
       <strong>Speicherdauer:</strong> Die Meldedaten zu einem Inhalt löschen wir 90 Tage nach
       der letzten Bewegung an diesem Inhalt – dazu zählt jede weitere gezählte Meldung, nicht
-      nur eine Sperre, eine Wiederherstellung oder ein Einspruch; bei einer
-      <strong>dauerhaften</strong> Sperre bewahren wir sie auf, solange die Sperre gilt. Den
-      „bekannt seit"-Vermerk eines Kontos speichern wir, bis das Konto endgültig gelöscht wird.
-      Löschst du dein Konto endgültig, löschen wir „bekannt seit" sowie alle Sperr-Vorgänge zu
-      deinen <strong>eigenen</strong> Inhalten; von dir bereits abgegebene Meldungen zu
-      <strong>fremden</strong> Inhalten bleiben (nur dein öffentlicher Schlüssel) bis zum
-      Ablauf der oben genannten Frist für den jeweiligen Inhalt bestehen. Das gilt für unser
-      Relais: bereits von anderen Apps abgeholte, <strong>signierte Sperr-Hinweise</strong>
-      (Inhalts-Kennung, Urheber-Schlüssel, Grund, Frist) bleiben auf jenen Geräten bestehen,
+      nur eine Sperre, eine Wiederherstellung oder ein Einspruch. Bei einer
+      <strong>dauerhaften</strong> Sperre gilt das Gleiche: bleibt der Inhalt 90 Tage ohne
+      weitere Bewegung gesperrt, löschen wir die öffentlichen Schlüssel der meldenden Konten
+      endgültig – es bleibt nur noch der Sperr-Vermerk selbst (Inhalts-Kennung, Urheber,
+      meistgenannter Grund, Zählrunde), ohne jeden Bezug zu den Meldenden; ein Einspruch bleibt
+      dabei weiterhin möglich, solange er noch nicht verbraucht ist. Den „bekannt seit"-Vermerk
+      eines Kontos speichern wir, bis das Konto endgültig gelöscht wird. Löschst du dein Konto
+      endgültig, löschen wir „bekannt seit" sowie alle Sperr-Vorgänge (auch bereits versiegelte)
+      zu deinen <strong>eigenen</strong> Inhalten; von dir bereits abgegebene Meldungen zu
+      <strong>fremden</strong> Inhalten bleiben (nur dein öffentlicher Schlüssel, bis zu seiner
+      Löschung nach obiger Regel) bis zum Ablauf der jeweiligen Frist bestehen. Das gilt für
+      unser Relais: bereits von anderen Apps abgeholte, <strong>signierte Sperr-Hinweise</strong>
+      (Inhalts-Kennung, Urheber-Schlüssel, Zustand, Frist) bleiben auf jenen Geräten bestehen,
       bis die jeweilige App sie selbst entfernt – nicht mehr sperrende Hinweise nach 30 Tagen,
       sperrende, solange die Sperre gilt.
     </p>
 
-    <h2>9. Löschen und seine ehrlichen Grenzen (Art. 17 DSGVO)</h2>
+    <h2>10. Löschen und seine ehrlichen Grenzen (Art. 17 DSGVO)</h2>
     <p>
       Du hast das Recht auf Löschung. So setzen wir es um – und wo die dezentrale Architektur
       an Grenzen stößt, sagen wir es offen:
@@ -374,10 +469,10 @@
       Mehr dazu: <a href="../account-deletion/">Konto &amp; Daten löschen</a>.
     </p>
 
-    <h2>10. Deine Rechte (Art. 15–22 DSGVO)</h2>
+    <h2>11. Deine Rechte (Art. 15–22 DSGVO)</h2>
     <p>
       Du hast das Recht auf <strong>Auskunft (Art. 15)</strong>, <strong>Berichtigung
-      (Art. 16)</strong>, <strong>Löschung (Art. 17, mit den in Abschnitt 9 genannten
+      (Art. 16)</strong>, <strong>Löschung (Art. 17, mit den in Abschnitt 10 genannten
       Grenzen)</strong>, <strong>Einschränkung (Art. 18)</strong>, <strong>Datenübertragbarkeit
       (Art. 20)</strong> – hier durch deine selbst-souveränen Schlüssel und die lokale
       Datenhaltung konzeptionell gut erfüllbar – sowie <strong>Widerspruch (Art. 21)</strong>
@@ -387,7 +482,7 @@
     </p>
     <p>
       Außerdem hast du nach <strong>Art. 22 DSGVO</strong> bei einer automatisierten
-      Sichtbarkeits-Sperre eines Inhalts (dem „Gemeinschafts-Riegel", Abschnitt 8) das Recht,
+      Sichtbarkeits-Sperre eines Inhalts (dem „Gemeinschafts-Riegel", Abschnitt 9) das Recht,
       <strong>menschliches Eingreifen zu verlangen, deinen Standpunkt darzulegen und die
       Entscheidung anzufechten</strong> – über die automatisierte In-App-Funktion „Einspruch"
       hinaus genügt dafür eine Nachricht an unsere Kontaktstelle; wir sehen uns den Einzelfall
@@ -401,7 +496,7 @@
       RocDev Solutions zuständige Behörde in Niedersachsen).
     </p>
 
-    <h2>11. Pseudonym ist nicht anonym</h2>
+    <h2>12. Pseudonym ist nicht anonym</h2>
     <p>
       Auch ohne Klarnamen bist du <strong>nicht anonym</strong>: Dein öffentlicher Schlüssel
       ist ein dauerhaftes, verkettbares Pseudonym; deine IP-Adresse ist den Relais gegenüber
@@ -409,7 +504,7 @@
       Wir behaupten ausdrücklich <strong>kein „100 % anonym" und keine Unverfolgbarkeit</strong>.
     </p>
 
-    <h2>12. Minderjährige</h2>
+    <h2>13. Minderjährige</h2>
     <p>
       Nodo richtet sich an Personen ab <strong>17 Jahren</strong> und <strong>nicht an
       Kinder</strong>. Beim Start ist ein Altersnachweis (Altersgate, mindestens 16 Jahre
@@ -417,14 +512,14 @@
       nicht wissentlich Daten von Kindern.
     </p>
 
-    <h2>13. Änderungen dieser Erklärung</h2>
+    <h2>14. Änderungen dieser Erklärung</h2>
     <p>
       Wir passen diese Erklärung an, wenn sich die Verarbeitung ändert. Maßgeblich ist die
       jeweils auf dieser Seite veröffentlichte Fassung (Stand oben).
     </p>
 
     <p class="small">
-      Stand: 19. September 2026. Diese Datenschutzerklärung ist eine Vorab-Fassung und wird vor einem
+      Stand: 20. September 2026. Diese Datenschutzerklärung ist eine Vorab-Fassung und wird vor einem
       vollständig offenen Launch fachanwaltlich finalisiert. Keine verbindliche Rechtsberatung.
     </p>
   </main>

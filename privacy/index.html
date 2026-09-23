@@ -26,7 +26,7 @@
   </header>
 
   <main id="main">
-    <span class="badge">Stand: 20. September 2026 · Vorabversion</span>
+    <span class="badge">Stand: 23. September 2026 · Vorabversion</span>
     <h1>Datenschutzerklärung — Nodavo</h1>
     <p class="muted">
       Diese Erklärung beschreibt, welche personenbezogenen Daten bei der Nutzung von
@@ -55,7 +55,7 @@
     <p>
       Kontakt für alle Anliegen zum Datenschutz, zu deinen Betroffenenrechten und für
       Missbrauchsmeldungen:
-      <strong><a href="mailto:phillipprochel@icloud.com">phillipprochel@icloud.com</a></strong>
+      <strong><a href="mailto:kontakt@nodavo.app">kontakt@nodavo.app</a></strong>
       (siehe auch <a href="../support/">Support-Seite</a>).
     </p>
     <p>
@@ -190,7 +190,7 @@
       Die Prüfung braucht kurz eine Internetverbindung. Klappt sie gerade nicht, wird nichts
       verbraucht; du kannst es später erneut versuchen. Hältst du eine Ablehnung für falsch,
       schreib an unsere
-      <strong><a href="mailto:phillipprochel@icloud.com">Kontaktadresse</a></strong> – dort
+      <strong><a href="mailto:kontakt@nodavo.app">Kontaktadresse</a></strong> – dort
       antwortet ein Mensch.
     </p>
 
@@ -259,9 +259,9 @@
             verschlüsselte Datenpakete zwischen, damit Follower sie auch bei Autor-offline
             empfangen.</li>
           <li><strong>öffentliche Hauptkanal-Objekte</strong> (Profile, Promos,
-            Boost-Tickets, öffentliche Bilder, Moderations-/Blocklisten) – diese liegen
-            content-adressiert und <strong>unverschlüsselt</strong> vor, weil sie ohnehin
-            öffentlich sind.</li>
+            Boost-Tickets, öffentliche Bilder, Moderations-/Blocklisten, Bild-Sperrliste –
+            siehe Abschnitt 9a) – diese liegen content-adressiert und
+            <strong>unverschlüsselt</strong> vor, weil sie ohnehin öffentlich sind.</li>
         </ul>
       </li>
     </ol>
@@ -425,6 +425,51 @@
       sperrende, solange die Sperre gilt.
     </p>
 
+    <h2>9a. Betreiber-Sperre einzelner Bilder</h2>
+    <p>
+      Zusätzlich zum automatischen Gemeinschafts-Riegel (Abschnitt 9) kann der Betreiber ein
+      <strong>einzelnes Bild</strong> – zum Beispiel nach einer behördlichen Anordnung oder
+      einem begründeten Hinweis – gezielt von unserem Relais entfernen lassen. Dabei
+      speichern wir <strong>ausschließlich einen kryptografischen Prüfwert des Bildes (nicht
+      das Bild selbst)</strong>, den Zeitpunkt, einen Grund-Code und eine interne
+      Vorgangsnummer – nie einen Namen. Diese Angaben dienen dazu, die erneute Annahme
+      derselben Datei zu verhindern und Rückfragen zuzuordnen.
+    </p>
+    <p>
+      <strong>Speicherdauer:</strong> solange die Sperre gilt, plus ein Jahr danach.
+      <strong>Rechtsgrundlage:</strong> Erfüllung einer rechtlichen Verpflichtung
+      (Art. 6 Abs. 1 lit. c DSGVO) bzw. unser berechtigtes Interesse an der dauerhaften
+      Wirksamkeit einer Löschung (Art. 6 Abs. 1 lit. f DSGVO).
+    </p>
+    <p>
+      Eine solche Sperre trifft gezielt die betroffene Bild-Datei, nicht das ganze Projekt
+      oder Konto. Betrifft sie dein eigenes Bild, siehst du an der betroffenen Stelle in der
+      App einen kurzen Hinweis; in seltenen Fällen (z. B. bei einer behördlichen Anordnung
+      mit Mitteilungsverbot) holen wir diesen Hinweis nach, sobald wir dürfen. Möchtest du
+      wissen, was genau passiert ist, schreib uns gern über unsere
+      <strong><a href="mailto:kontakt@nodavo.app">Kontaktadresse</a></strong> – wir
+      erklären es dir persönlich. Mehr zum Melde- und Begründungsweg:
+      <a href="../dsa/">Plattform-Regeln (DSA)</a>.
+    </p>
+
+    <h2>9b. Betriebs-Protokolle des Relais</h2>
+    <p>
+      Wird ein öffentlicher Inhalt über den Melden-Knopf als <strong>rechtswidrig</strong>
+      gemeldet, vermerkt unser Relais das zusätzlich in seinem Betriebs-Protokoll: die
+      Kennung des gemeldeten Inhalts (bei einem Profil ist das der öffentliche Schlüssel des
+      Kontos), kryptografische Prüfwerte der enthaltenen Bilder und den Zeitpunkt.
+      <strong>Wer gemeldet hat, wird dabei nicht gespeichert.</strong> Dieser Vermerk ist
+      nötig, damit wir ein rechtswidriges Bild entfernen können, ohne es selbst ansehen zu
+      müssen – bei bestimmten Inhalten wäre uns das Ansehen gesetzlich verboten.
+    </p>
+    <p>
+      Die Protokolle liegen beim Serverdienst (Railway, siehe Abschnitt 6) und werden dort
+      nach <strong>sieben Tagen</strong> automatisch gelöscht; wir werten sie nicht systematisch aus.
+      <strong>Rechtsgrundlage:</strong> Erfüllung einer rechtlichen Verpflichtung
+      (Art. 6 Abs. 1 lit. c DSGVO) sowie unser berechtigtes Interesse am sicheren Betrieb
+      (Art. 6 Abs. 1 lit. f DSGVO).
+    </p>
+
     <h2>10. Löschen und seine ehrlichen Grenzen (Art. 17 DSGVO)</h2>
     <p>
       Du hast das Recht auf Löschung. So setzen wir es um – und wo die dezentrale Architektur
@@ -465,7 +510,7 @@
     <p>
       Für die Löschung von Daten, die nur wir kontrollieren (z. B. Relais-Replikat,
       Boost-Belege), genügt eine Nachricht an
-      <strong><a href="mailto:phillipprochel@icloud.com">phillipprochel@icloud.com</a></strong>.
+      <strong><a href="mailto:kontakt@nodavo.app">kontakt@nodavo.app</a></strong>.
       Mehr dazu: <a href="../account-deletion/">Konto &amp; Daten löschen</a>.
     </p>
 
@@ -490,7 +535,7 @@
     </p>
     <p>
       Zur Ausübung genügt eine Nachricht an
-      <strong><a href="mailto:phillipprochel@icloud.com">phillipprochel@icloud.com</a></strong>.
+      <strong><a href="mailto:kontakt@nodavo.app">kontakt@nodavo.app</a></strong>.
       Du hast außerdem das Recht, dich bei einer <strong>Datenschutz-Aufsichtsbehörde</strong>
       zu beschweren (zuständig u. a. die Aufsichtsbehörde deines Wohnsitzlandes bzw. die für
       RocDev Solutions zuständige Behörde in Niedersachsen).
@@ -519,7 +564,7 @@
     </p>
 
     <p class="small">
-      Stand: 20. September 2026. Diese Datenschutzerklärung ist eine Vorab-Fassung und wird vor einem
+      Stand: 23. September 2026. Diese Datenschutzerklärung ist eine Vorab-Fassung und wird vor einem
       vollständig offenen Launch fachanwaltlich finalisiert. Keine verbindliche Rechtsberatung.
     </p>
   </main>

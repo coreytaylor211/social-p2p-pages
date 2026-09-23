@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["SV6JNF39PQ.com.coreytaylor211.socialp2p"],
+        "components": [
+          { "/": "/k/", "?": { "id": "?*" }, "comment": "Kanal-/Creator-Profil" },
+          { "/": "/p/", "?": { "id": "?*" }, "comment": "Projekt im Schaufenster" },
+          { "/": "*", "exclude": true, "comment": "alles andere bleibt normale Website" }
+        ]
+      }
+    ]
+  }
+}

@@ -68,6 +68,30 @@ header.site .wrap {
 }
 .brand span { color: var(--accent); }
 
+/* Kopfzeilen-Nav auf schmalen Geraeten (Review 2026-09-25): drei
+   voneinander unabhaengige Absicherungen, damit die Nav-Zeile IMMER
+   denselben Rand rechts wie links behaelt (aus `.wrap`-Padding) und nie an
+   die Kante stoesst — unabhaengig von Schriftgroesse, Zoom oder
+   Schriftart-Messung des jeweiligen Geraets:
+   1. `min-width: 0` auf `nav.site`/`ul`: ohne das verhindert die
+      automatische Mindestbreite eines flex-Kindes (Inhaltsbreite statt nur
+      des laengsten Wortes) zuverlaessiges Schrumpfen auf die verfuegbare
+      Restbreite.
+   2. Unter 480px stapelt die Kopfzeile Marke und Nav spaltenweise
+      (`flex-direction: column`) statt beide um eine gemeinsame Zeile
+      konkurrieren zu lassen — `align-items: stretch` dehnt `nav.site` dann
+      verlaesslich auf exakt die Innenbreite von `.wrap`.
+   3. `overflow-wrap`/`word-break` auf den einzelnen Links: reicht der Platz
+      selbst fuer EINEN Eintrag nicht (sehr schmales Geraet, groessere
+      Schrift/Zoom, laengeres Wort), bricht genau dieser Eintrag zweizeilig
+      um, statt ueber den Rand hinauszulaufen.
+   Geprueft bei 320/360/375/390/430/480/481/500/560/640px sowie mit
+   vergroesserter Schrift (zweizeilige Eintraege).
+*/
+nav.site {
+  min-width: 0;
+  flex: 1 1 auto;
+}
 nav.site ul {
   list-style: none;
   display: flex;
@@ -76,8 +100,17 @@ nav.site ul {
   margin: 0;
   padding: 0;
   font-size: 0.95rem;
+  min-width: 0;
 }
-nav.site a { text-decoration: none; }
+nav.site a {
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+@media (max-width: 480px) {
+  header.site .wrap { flex-direction: column; align-items: stretch; }
+}
 
 main {
   max-width: var(--maxw);
@@ -203,11 +236,61 @@ footer.site nav ul {
   gap: 0.4rem 1rem;
   padding: 0;
   margin: 0 0 0.7rem;
+  width: 100%;
+  min-width: 0;
 }
-footer.site a { text-decoration: none; }
+footer.site a {
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Schaufenster (B6): grosses Projektfoto auf der einzelnen Vorstellungs-
+   seite + kleine Vorschaubilder im Uebersichts-Raster. Reines CSS, kein JS. */
+.showcase-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin: 1.2rem 0;
+}
+.showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.4rem 0;
+}
+.showcase-card {
+  display: block;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text);
+}
+.showcase-card:hover { border-color: var(--accent-2); }
+.showcase-card img {
+  display: block;
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  background: var(--surface-2);
+}
+.showcase-card .t {
+  font-weight: 600;
+  padding: 0.7rem 0.9rem 0.1rem;
+}
+.showcase-card .d {
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding: 0 0.9rem 0.9rem;
+}
 
 @media (max-width: 560px) {
   body { font-size: 16px; }
   .cards { grid-template-columns: 1fr; }
+  .showcase-grid { grid-template-columns: 1fr; }
   h1 { font-size: 1.45rem; }
 }

@@ -26,7 +26,7 @@
   </header>
 
   <main id="main">
-    <span class="badge">Stand: 25. September 2026 · Vorabversion</span>
+    <span class="badge">Stand: 26. September 2026 · Vorabversion</span>
     <h1>Datenschutzerklärung — Nodavo</h1>
     <p class="muted">
       Diese Erklärung beschreibt, welche personenbezogenen Daten bei der Nutzung von
@@ -589,11 +589,14 @@
       <li><strong>Deine lokalen Daten und Identität:</strong> löschst du direkt in der App
         (Löschfunktion / „Konto &amp; Daten löschen"). Diese Löschung ist auf deinem Gerät
         vollständig.</li>
-      <li><strong>Private (E2E-verschlüsselte) Beiträge:</strong> Beim Zurückziehen setzen wir
-        einen <strong>Lösch-Marker (Tombstone)</strong> und <strong>vergessen den
-        Schlüssel</strong>, mit dem der Inhalt verschlüsselt war. Das Chiffrat wird dadurch
-        <strong>unlesbar</strong> – auch in den Relais-Replikaten. Dies ist die stärkste
-        verfügbare Maßnahme.</li>
+      <li><strong>Private (Ende-zu-Ende-verschlüsselte) Beiträge:</strong> Beim Zurückziehen
+        verteilen wir einen <strong>signierten Lösch-Vermerk (Tombstone)</strong>. Dein Gerät
+        und die Geräte deiner Follower blenden den Beitrag daraufhin aus. Der verschlüsselte
+        Inhalt selbst wird dabei <strong>nicht</strong> nachträglich unlesbar gemacht und
+        <strong>nicht</strong> vom Relais entfernt: Wer die verschlüsselten Daten schon hat und
+        den passenden Schlüssel besitzt – also deine Follower –, kann den Beitrag weiterhin
+        lesen. Ein Verfahren, das den Schlüssel nachträglich unbrauchbar macht, ist vorbereitet,
+        aber noch nicht im Einsatz.</li>
       <li><strong>Öffentliche Profile, Promos und Kommentare:</strong> Wenn du dein
         Profil/Projekt löschst, wird es <strong>von deinem Gerät entfernt</strong> und ein
         <strong>signierter Lösch-Vermerk (Tombstone)</strong> im Netz verteilt, sodass andere
@@ -610,9 +613,9 @@
       <strong>fremden oder nicht-konformen Geräten</strong> können wir <strong>nicht
       zurückholen</strong>. Insbesondere <strong>öffentliche Profildaten (Kanalname,
       Profilbild)</strong> wurden möglicherweise schon kopiert/zwischengespeichert. Wir
-      ergreifen alle uns verfügbaren, zumutbaren technischen Mittel (Tombstone,
-      Schlüssel-Vergessen, Blockliste sowie die aktive Tilgung der zwischengespeicherten
-      Relais-Kopie bei Erhalt des signierten Lösch-Vermerks)
+      ergreifen alle uns verfügbaren, zumutbaren technischen Mittel (signierter
+      Lösch-Vermerk, Blockliste sowie die aktive Tilgung der zwischengespeicherten
+      Relais-Kopie bei Erhalt dieses Vermerks)
       – eine vollständige Garantie über das von uns Kontrollierte hinaus gibt es in einer
       dezentralen Architektur jedoch nicht. Diese Offenheit ist selbst Teil unserer
       Transparenzpflicht (Art. 13 DSGVO).
@@ -674,7 +677,7 @@
     </p>
 
     <p class="small">
-      Stand: 25. September 2026. Diese Datenschutzerklärung ist eine Vorab-Fassung und wird vor einem
+      Stand: 26. September 2026. Diese Datenschutzerklärung ist eine Vorab-Fassung und wird vor einem
       vollständig offenen Launch fachanwaltlich finalisiert. Keine verbindliche Rechtsberatung.
     </p>
   </main>

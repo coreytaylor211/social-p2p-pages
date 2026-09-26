@@ -26,7 +26,7 @@
   </header>
 
   <main id="main">
-    <span class="badge">Stand: 23. September 2026 · Vorabversion</span>
+    <span class="badge">Stand: 25. September 2026 · Vorabversion</span>
     <h1>Datenschutzerklärung — Nodavo</h1>
     <p class="muted">
       Diese Erklärung beschreibt, welche personenbezogenen Daten bei der Nutzung von
@@ -76,7 +76,12 @@
         Kanal ein, damit dich neue Leute finden. Diese Inhalte sind <strong>öffentlich,
         unverschlüsselt und für jedermann sichtbar</strong>. Sie enthalten personenbezogene
         Daten (z. B. deinen Kanalnamen und dein Profilbild). Hierauf bezieht sich der
-        Großteil dieser Erklärung, weil hier am meisten verarbeitet wird.</li>
+        Großteil dieser Erklärung, weil hier am meisten verarbeitet wird.
+        <strong>Das gilt nicht nur für Creator:</strong> Auch wenn du selbst nie etwas
+        veröffentlichst, kannst du dir – rein freiwillig – einen Anzeigenamen (und optional
+        ein Bild) geben, damit man dich beim Kommentieren/Reagieren wiedererkennt; für diesen
+        Namen/dieses Bild gilt dieselbe Öffentlichkeit wie für ein Creator-Profil (siehe
+        Abschnitt 5).</li>
       <li><strong>B) Der private Follower-Feed (das „Heiligtum").</strong> Inhalte, die du
         an deine Follower postest, werden <strong>Ende-zu-Ende-verschlüsselt</strong>
         zugestellt. Wir als Betreiber <strong>können diese Inhalte nicht lesen</strong> –
@@ -196,15 +201,23 @@
 
     <h2>5. Öffentlicher Hauptkanal: Profile, Promos, Projekte, Engagement (öffentliches PII)</h2>
     <p>
-      Wenn du als Creator am Hauptkanal teilnimmst, werden folgende Daten
-      <strong>öffentlich</strong> sichtbar gemacht, signiert mit deinem Schlüssel,
-      <strong>dezentral an andere Teilnehmer verbreitet und zusätzlich auf unseren
+      Wenn du am Hauptkanal teilnimmst – als Creator <strong>oder</strong> indem du dir nur
+      einen Anzeigenamen gibst, um beim Kommentieren/Reagieren erkennbar zu sein –, werden
+      folgende Daten <strong>öffentlich</strong> sichtbar gemacht, signiert mit deinem
+      Schlüssel, <strong>dezentral an andere Teilnehmer verbreitet und zusätzlich auf unseren
       Relais-Servern als Replikat gespeichert</strong> (Store-and-Forward, siehe Abschnitt 6):
     </p>
     <ul class="feat">
-      <li><strong>Öffentliches Kanal-Profil:</strong> Kanalname, <strong>Pflicht-Profilbild
-        (Avatar)</strong>, Beschreibung. Kanalname und Bild sind <strong>öffentliche
-        personenbezogene Daten</strong> und für jedermann sichtbar.</li>
+      <li><strong>Öffentliches Kanal-Profil:</strong> Kanalname, ein Profilbild, optional eine
+        Beschreibung. Kanalname und Bild sind <strong>öffentliche personenbezogene Daten</strong>
+        und für jedermann sichtbar, der deine Beiträge, Kommentare oder Reaktionen sieht.
+        Ein Profilbild ist technisch zwar erforderlich, du musst dafür aber <strong>kein
+        eigenes Foto</strong> wählen: wählst du keins, verwendet die App an seiner Stelle
+        automatisch eine einzige, feste, rein dekorative Farbfläche, die sich <strong>alle</strong>
+        Konten ohne eigenes Foto teilen – es wird also <strong>kein Foto von dir</strong>
+        übertragen, nur dieses eine geteilte, generische Bild (überall in der App zeigt sie
+        dir statt dieser Fläche eine an deinen Schlüssel gebundene Farbe an, ohne dafür ein
+        Bild zu laden).</li>
       <li><strong>Promo-Karten:</strong> Titel, Kategorie, Pitch-Text, Cover-Bild, Verweis
         auf deine Identität (Pubkey).</li>
       <li><strong>Projekte/Beiträge im öffentlichen Bereich</strong> sowie ggf.
@@ -229,10 +242,13 @@
       durch Mehrfach-Identitäten verzerrt sein – sie sind keine geprüfte Wahrheit.
     </p>
     <p>
-      <strong>Rechtsgrundlagen:</strong> Erbringung des von dir als Creator gewünschten
-      Entdeckungs-/Schaufenster-Dienstes (Art. 6 Abs. 1 lit. b DSGVO) sowie unser und dein
-      berechtigtes Interesse an Auffindbarkeit und an einem funktionierenden öffentlichen
-      Bereich (Art. 6 Abs. 1 lit. f DSGVO). Der <strong>private Follower-Feed</strong> (B) ist
+      <strong>Rechtsgrundlagen:</strong> Erbringung des von dir gewünschten Dienstes – als
+      Creator der Entdeckungs-/Schaufenster-Funktion, als Leser:in des einfachen
+      Wiedererkennens beim Kommentieren/Reagieren (Art. 6 Abs. 1 lit. b DSGVO) – sowie unser
+      und dein berechtigtes Interesse an Auffindbarkeit und an einem funktionierenden
+      öffentlichen Bereich (Art. 6 Abs. 1 lit. f DSGVO). Ein Anzeigename ist in beiden Fällen
+      <strong>freiwillig</strong>: ohne ihn erscheinst du weiterhin nur mit dem Kürzel deines
+      öffentlichen Schlüssels. Der <strong>private Follower-Feed</strong> (B) ist
       hiervon nicht betroffen und bleibt Ende-zu-Ende-verschlüsselt.
     </p>
 
@@ -304,6 +320,100 @@
       Servernamen an diese Anbieter (USA) übermittelt. Diese sind dabei eigenständig
       Verantwortliche. <em>Rechtsgrundlage: berechtigtes Interesse an Erreichbarkeit
       (Art. 6 Abs. 1 lit. f DSGVO); Drittland-Transfer gestützt auf Standardvertragsklauseln.</em>
+    </p>
+
+    <h2>6a. Mitteilungen (die Glocke): Benachrichtigungs-Dienst und Apple</h2>
+    <p>
+      Die App kann dich mit einer <strong>Mitteilung</strong> wecken, wenn es etwas Neues
+      gibt. Das ist <strong>freiwillig</strong> und standardmäßig <strong>aus</strong>: du
+      schaltest die Glocke in den Einstellungen ein, und iOS fragt dich vorher um Erlaubnis.
+      Damit eine Mitteilung dein Gerät erreichen kann, braucht es einen kleinen eigenen
+      Dienst von uns (den <strong>Benachrichtigungs-Dienst</strong>) und Apples
+      Zustell-Netz (APNs) – anders ist ein Push auf einem iPhone technisch nicht möglich.
+    </p>
+    <p><strong>Was der Benachrichtigungs-Dienst von dir erfährt, solange die Glocke an ist:</strong></p>
+    <ul class="feat">
+      <li>den <strong>Geräte-Token</strong> von Apple (die Adresse, an die eine Mitteilung
+        geschickt wird – er sagt nichts über dich aus, aber er gehört zu deinem Gerät),</li>
+      <li>die <strong>öffentlichen Schlüssel der Kanäle</strong>, denen dieses Gerät mit
+        aktiver Glocke folgt (damit er weiß, wann er dich wecken soll),</li>
+      <li>die <strong>Sprache</strong> der Weckzeile (nur „de" oder „en"),</li>
+      <li><strong>neu, und nur im Creator-Modus:</strong> deinen <strong>eigenen</strong>
+        öffentlichen Schlüssel. Nur damit kann er dein Gerät wecken, wenn jemand auf einen
+        <strong>deiner Beiträge antwortet</strong>. Wer nicht veröffentlicht (Creator-Modus
+        aus), gibt seinen Schlüssel auch nicht heraus – es könnte ja niemand antworten.</li>
+    </ul>
+    <p>
+      <strong>Wenn jemand auf deinen Beitrag antwortet</strong>, meldet unser Relais dem
+      Benachrichtigungs-Dienst genau eine Angabe: <strong>„dieser Autor hat eine Antwort
+      bekommen"</strong> – also deinen öffentlichen Schlüssel als Empfänger.
+      <strong>Nicht</strong> übermittelt werden: <strong>wer</strong> geantwortet hat,
+      <strong>auf welchen Beitrag</strong> und selbstverständlich auch nicht der
+      <strong>Text</strong>. Die Antwort selbst holt sich deine App anschließend direkt aus
+      dem Netz. Der Dienst führt über diese Weck-Vorgänge <strong>kein Protokoll</strong>;
+      er merkt sich nur im Arbeitsspeicher, wann er dein Gerät zuletzt geweckt hat, damit es
+      nicht im Dauerbetrieb klingelt (nach einem Neustart des Dienstes ist auch das weg).
+    </p>
+    <p>
+      <strong>Inhalt der Mitteilung:</strong> immer nur ein allgemeiner Satz – „Neuer Beitrag
+      in einem Kanal, dem du folgst." bzw. „Jemand hat auf deinen Beitrag geantwortet." –
+      plus eine technische Sprungmarke, damit ein Tippen in der App an der richtigen Stelle
+      landet. <strong>Keine Namen, keine Texte, keine Beitrags-Kennung.</strong>
+    </p>
+    <p>
+      <strong>Speicherdauer:</strong> Die Registrierung (Geräte-Token, Kanal-Schlüssel,
+      Sprache, ggf. dein eigener Schlüssel) bleibt so lange gespeichert, wie die Glocke an
+      ist. Schaltest du sie aus, meldet die App das Gerät ab und der Eintrag wird
+      <strong>gelöscht</strong>; dasselbe passiert automatisch, sobald Apple den Token als
+      ungültig meldet (App gelöscht oder Mitteilungen entzogen). Verlässt du den
+      Creator-Modus, meldet die App sofort eine Registrierung <strong>ohne</strong> deinen
+      eigenen Schlüssel – der Eintrag dazu wird damit beim Dienst gelöscht.
+    </p>
+    <p>
+      <strong>Ehrlich zu dieser Meldung:</strong> Sie geht <strong>bestmöglich</strong>
+      hinaus (best-effort). War der Dienst im Moment des Umschaltens nicht erreichbar – kein
+      Netz, oder er hat wegen zu vieler Anfragen von derselben Internet-Adresse gerade
+      abgelehnt –, bleibt der bisherige Eintrag zunächst stehen; du bekommst darüber
+      <strong>keinen Hinweis</strong>. Die App wiederholt die Meldung automatisch beim
+      nächsten App-Start (und bei jeder Änderung an deinen gefolgten Kanälen), bis sie
+      angekommen ist. Sicher weg ist der Eintrag, wenn du die Glocke ausschaltest und die
+      App dabei Verbindung hat – oder wenn du die App löschst: dann meldet Apple den
+      Geräte-Token als ungültig und der Dienst räumt ihn von selbst ab.
+    </p>
+    <p>
+      <strong>Wer das sehen könnte:</strong>
+    </p>
+    <ul class="feat">
+      <li><strong>Wir als Betreiber</strong> – wir haben Zugriff auf den Server.</li>
+      <li><strong>Railway</strong> als Auftragsverarbeiter (USA – siehe Abschnitt 6, die
+        Hinweise zum Drittland-Transfer gelten hier genauso).</li>
+      <li><strong>Apple</strong>: beim Zustellen den Geräte-Token, den Zeitpunkt, den oben
+        genannten allgemeinen Satz und die <strong>technische Sprungmarke</strong> – Apple
+        kann daran also erkennen, ob es um einen neuen Beitrag oder um eine Antwort geht.
+        <strong>Die Schlüssel der Kanäle und dein eigener Schlüssel gehen nie an
+        Apple.</strong></li>
+      <li><strong>Theoretisch auch ein Fremder.</strong> Die Anmeldung beim
+        Benachrichtigungs-Dienst verlangt <strong>keinen Eigentumsnachweis</strong> für die
+        genannten Schlüssel. Wer dort den öffentlichen Schlüssel eines anderen einträgt,
+        bekommt dessen Weck-Mitteilungen auf sein eigenes Gerät und erfährt damit den
+        <strong>Zeitpunkt</strong> – nicht den Inhalt, nicht wer geantwortet hat, nicht auf
+        welchen Beitrag. Dem Betroffenen wird dadurch nichts genommen. Diese Lücke gibt es
+        seit der ersten Fassung der Glocke („wann veröffentlicht dieser Kanal"); sie zu
+        schließen heißt, die Anmeldung zu unterschreiben – das ist ein eigener Schritt, den
+        wir noch vor uns haben.</li>
+    </ul>
+    <div class="note">
+      <strong>Ehrlich gesagt:</strong> Der Benachrichtigungs-Dienst erfährt durch die
+      Antwort-Mitteilungen etwas mehr als vorher – nämlich, dass auf Beiträge dieses einen
+      Autors geantwortet wird, und wann. Wer dir geantwortet hat, bleibt ihm verborgen; ein
+      Gesprächsverlauf entsteht dort nicht. Willst du auch das nicht, schalte die Glocke aus
+      (oder den Creator-Modus): dann kennt der Dienst dein Gerät gar nicht. Die App
+      funktioniert vollständig ohne sie – Antworten siehst du dann, sobald du die App öffnest.
+    </div>
+    <p>
+      <strong>Rechtsgrundlage:</strong> deine <strong>Einwilligung</strong>
+      (Art. 6 Abs. 1 lit. a DSGVO), die du mit dem Einschalten der Glocke erteilst und
+      jederzeit durch Ausschalten widerrufen kannst.
     </p>
 
     <h2>7. Eingebettete externe Videos (YouTube / Vimeo)</h2>
@@ -564,7 +674,7 @@
     </p>
 
     <p class="small">
-      Stand: 23. September 2026. Diese Datenschutzerklärung ist eine Vorab-Fassung und wird vor einem
+      Stand: 25. September 2026. Diese Datenschutzerklärung ist eine Vorab-Fassung und wird vor einem
       vollständig offenen Launch fachanwaltlich finalisiert. Keine verbindliche Rechtsberatung.
     </p>
   </main>

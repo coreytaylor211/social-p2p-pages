@@ -134,6 +134,31 @@ h3 { font-size: 1.05rem; margin: 1.3rem 0 0.4rem; }
   margin-bottom: 1.4rem;
 }
 
+/* Kopf der Startseite: App-Zeichen (abgerundetes Quadrat) neben dem Schriftzug,
+   darunter der Slogan als ganz normaler Satz. Linksbündig, ruhig. */
+.mark {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.2rem 0 0.6rem;
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.mark img {
+  width: 40px;
+  height: 40px;
+  border-radius: 9px;
+  flex: none;
+}
+.slogan {
+  margin: 0 0 1.1rem;
+  padding: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
 .badge {
   display: inline-block;
   background: var(--surface-2);
